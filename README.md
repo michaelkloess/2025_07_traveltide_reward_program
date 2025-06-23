@@ -35,7 +35,7 @@ Grundlage ist eine relationale PostgreSQL-Datenbank mit:
 * Programmiersprache: -
 * Datenanalyse: SQL
 * Visualisierung: -
-* Clustering / Segmentierung: 
+* Clustering / Segmentierung: -
 * Umgebung: DBeaver, Jupyter Notebooks, VS Code
 
 ---
@@ -95,22 +95,24 @@ Erstellung eines „Scoring Sheets“ zur Weiterverarbeitung im Marketing.
 
 ## Datenquellen
 
-* Buchungsverhalten
-* Stornierungsraten
-* Reisedaten & Zielgruppentypen
-* Historische Nutzung von Vorteilen (wenn vorhanden)
+* sessions - Daten zu Nutzer-Sessions, Rabatten und Buchungsverhalten
+* user - Demografische Nutzerinformationen wie Alter, Geschlecht und Wohnort
+* hotels - Angaben zu Hotelbuchungen, Aufenthaltsdauer und Kosten
+* flights - Informationen zu gebuchten Flügen und Reisedetails
 
 ---
 
-## Personalisierungslogik
+## Personalisierungslogik - !!! Nachbearbeiten !!! 
 
-Die Zuordnung erfolgt modellbasiert (Clustering, z. B. K-Means) oder regelbasiert, je nach Datenlage. Bei geringer Datenverfügbarkeit werden heuristische Regeln angewendet (z. B. Vielbucher = zusatzmeilen).
+Die Zuordnung erfolgt modellbasiert (Clustering, z. B. K-Means) oder regelbasiert, je nach Datenlage. 
+Bei geringer Datenverfügbarkeit werden heuristische Regeln angewendet (z. B. Vielbucher = Zusatzmeilen).
 
 ---
 
-## E-Mail-Kampagne
+## E-Mail-Kampagne - !!! Nachbearbeiten !!! 
 
-Mock-ups zeigen den Unterschied zwischen generischen und personalisierten Mails. Die Analyse entscheidet mit, welche Botschaft bei welchem Kunden landet – z. B.:
+Mock-ups zeigen den Unterschied zwischen generischen und personalisierten Mails. 
+Die Analyse entscheidet mit, welche Botschaft bei welchem Kunden landet – z. B.:
 
 * "Exklusive Vorteile für Vielbucher: Extra-Meilen sichern"
 * "Sorgenfrei reisen: Ihre kostenlose Stornierung wartet"
@@ -119,7 +121,8 @@ Mock-ups zeigen den Unterschied zwischen generischen und personalisierten Mails.
 
 ## Bedeutung für das Unternehmen
 
-TravelTide hat sich technologisch stark auf Such-Performance fokussiert. Dieses Projekt bringt erstmals datengetriebene **Kundenbindung** in den Mittelpunkt und liefert eine direkte Verbindung zwischen Analyseergebnissen und operativer Umsetzung.
+TravelTide hat sich technologisch stark auf Such-Performance fokussiert. 
+Dieses Projekt bringt erstmals datengetriebene **Kundenbindung** in den Mittelpunkt und liefert eine direkte Verbindung zwischen Analyseergebnissen und operativer Umsetzung.
 
 ---
 
@@ -154,7 +157,7 @@ TravelTide hat sich technologisch stark auf Such-Performance fokussiert. Dieses 
 
 ---
 
-## Weiterentwicklung
+## Weiterentwicklung - !!! Nachbearbeiten !!! 
 
 * Integration von Echtzeitdaten aus dem Web-Tracking
 * AB-Tests zur Performance der individualisierten Mails
