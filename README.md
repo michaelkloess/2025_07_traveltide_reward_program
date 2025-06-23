@@ -36,7 +36,7 @@ Grundlage ist eine relationale PostgreSQL-Datenbank mit:
 * Datenanalyse: SQL
 * Visualisierung: -
 * Clustering / Segmentierung: -
-* Umgebung: DBeaver, Jupyter Notebooks, VS Code
+* Umgebung: DBeaver, Google Colab, VS Code
 
 ---
 
