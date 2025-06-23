@@ -45,26 +45,32 @@ Grundlage ist eine relationale PostgreSQL-Datenbank mit:
 ```
 traveltide-rewards-analyse/
 │
-├── README.md                 ← Projektbeschreibung & Zielsetzung
-├── requirements.txt          ← Abhängigkeiten
+├── README.md                           ← Projektbeschreibung & Zielsetzung
+├── requirements.txt                    ← Abhängigkeiten (z. B. pandas, sklearn, jupyter)
 │
 ├── data/
-│   ├── raw/                  ← Rohdaten (nicht veröffentlicht)
-│   └── processed/            ← Vorbereitete Datensätze für Analysen (nicht veröffentlicht)
+│   ├── raw/                            ← Rohdaten (nicht veröffentlicht, ggf. .gitignored)
+│   └── processed/                      ← Vorbereitete Datensätze für Analysen
 │
 ├── notebooks/
-│   ├── 01_exploration.ipynb         ← Erste Datenübersicht
-│   ├── 02_segmentation.ipynb        ← Segmentierung nach Interessen
-│   └── 03_perk_assignment.ipynb     ← Perk-Zuordnung pro Kunde
+│   ├── 01_exploration.ipynb            ← Erste Datenübersicht & EDA
+│   ├── 02_segmentation.ipynb           ← Kunden-Segmentierung
+│   └── 03_perk_assignment.ipynb        ← Perk-Zuordnung pro Kunde
 │
 ├── src/
-│   ├── data_preparation.py          ← Bereinigung & Transformation
-│   ├── modeling.py                  ← Segmentierungslogik & Scoring
-│   └── utils.py                     ← Helferfunktionen
+│   ├── sql/                            ← SQL-Skripte für Vorbereitung & Analyse
+│   │   ├── clean_sessions.sql          ← Cleaning & Preprocessing der Sessiondaten
+│   │   ├── join_customer_data.sql      ← Tabellenverknüpfung & User-Datenanreicherung
+│   │   └── feature_engineering.sql     ← Erzeugen neuer Metriken & Spalten
+│   │
+│   ├── data_preparation.py             ← Python-Code für Datenbereinigung
+│   ├── modeling.py                     ← Segmentierungslogik, Scoring-Modelle
+│   └── utils.py                        ← Wiederverwendbare Funktionen, z. B. Plotting
 │
 └── outputs/
-    ├── visuals/                     ← Plots & Visualisierungen
-    └── summary.md                  ← Ergebniszusammenfassung
+    ├── visuals/                        ← Diagramme, Heatmaps, Radarplots etc.
+    └── summary.md                      ← Zusammenfassung der Ergebnisse
+
 ```
 
 ---
