@@ -1,0 +1,48 @@
+Beispiel: 
+Beobachtung: Alle rabattierten Buchungen in der Tabelle bookings wurden storniert.
+Interpretation: Der Rabatt scheint in seiner aktuellen Form keinen loyalitätsfördernden Effekt zu haben.
+Relevanz: Die Variable discount_used wird als kritisches Merkmal für zukünftige Segmentierung markiert.
+
+Beobachtung: 
+- 
+Interpretation:
+-
+Relevanz: 
+-
+
+
+
+## Zuwachsraten der neuen Nutzer im Jahresvergleich
+
+| Jahr | Nutzerzahl | Veränderung zum Vorjahr  |
+|------|------------|--------------------------|
+| 2021 | 75.555     | Startwert                |
+| 2022 | 427.441    | +465,84 %                |
+| 2023 | 517.930    | +21,16 %                 |
+
+## Beobachtung: 
+- Im Jahr 2022 gab es einen temporären, schnellen Wachsstumsschub, der nicht im selben Ausmaß aufrechterhalten werden konnte. 
+## Interpretation:
+- Es gab einen zeitweiligen Hype, der zu einem überproportional starkem Wachstum geführt hat, ohne dabei die Kunden langfristig ans Unternehmen zu binden. 
+- Vielleicht wurde das Wachstum mit irgendwelchen Aktionen künstlich befeuert. 
+## Relevanz: 
+- Da nur Daten von Nutzern in die Analyse einfließen sollen, die mehr als 7 Sessions haben und nach dem 4. Januar 2023 entstanden sind, könnte diese Beobachtung ggf. unrelevant sein.
+
+## Zuwachsraten nach Kategorie (Jahresvergleich)
+
+| Kategorie | 2021 → 2022 | 2022 → 2023 |
+|-----------|-------------|-------------|
+| Kids      | +464,00 %   | +21,09 %    |
+| No Kids   | +466,58 %   | +21,21 %    |
+
+
+## Heimatländer
+
+home_country|count |
+------------+------+
+usa         |848354|
+canada      |172572|
+
+
+
+
