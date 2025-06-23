@@ -46,16 +46,20 @@ Grundlage ist eine relationale PostgreSQL-Datenbank mit:
 traveltide-rewards-analyse/
 │
 ├── README.md                           ← Projektbeschreibung & Zielsetzung
-├── requirements.txt                    ← Abhängigkeiten (z. B. pandas, sklearn, jupyter)
+├── requirements.txt                    ← Abhängigkeiten (z.B. pandas, sklearn, jupyter)
 │
 ├── data/
-│   ├── raw/                            ← Rohdaten (nicht veröffentlicht, ggf. .gitignored)
-│   └── processed/                      ← Vorbereitete Datensätze für Analysen
+│   ├── raw/                            ← Rohdaten (nicht veröffentlicht)
+│   └── processed/                      ← Vorbereitete Datensätze für Analysen (nicht veröffentlicht)
 │
 ├── notebooks/
 │   ├── 01_exploration.ipynb            ← Erste Datenübersicht & EDA
 │   ├── 02_segmentation.ipynb           ← Kunden-Segmentierung
 │   └── 03_perk_assignment.ipynb        ← Perk-Zuordnung pro Kunde
+│
+├── findings/
+│   ├── 01_data_observations.md         ← Beobachtungen während EDA
+│   └── 02_feature_decisions.md         ← Auswahl & Begründung der Metriken
 │
 ├── src/
 │   ├── sql/                            ← SQL-Skripte für Vorbereitung & Analyse
