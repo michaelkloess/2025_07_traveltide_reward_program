@@ -45,4 +45,82 @@ canada      |172572|
 
 
 
+--
 
+## Stonierung vs. Nicht stoniert 
+
+new_label     |count_cancellation|
+--------------+------------------+
+Stoniert      |             90670|
+Nicht stoniert|           5317393|
+
+## Nutzerverweildauer auf der Website:
+
+time_category |session_count|
+--------------+-------------+
+<= 5 Sekunden |            7|
+<= 10 Sekunden|        40920|
+<= 15 Sekunden|       107770|
+<= 30 Sekunden|       505797|
+<= 45 Sekunden|       515682|
+<= 1 Minute   |       415290|
+<= 5 Minuten  |      3468207|
+<= 10 Minuten |       238954|
+<= 15 Minuten |        24430|
+<= 20 Minuten |         6609|
+<= 25 Minuten |         3565|
+<= 30 Minuten |         2788|
+<= 45 Minuten |         6506|
+<= 60 Minuten |         5483|
+<= 90 Minuten |         8697|
+<= 120 Minuten|        57358|
+
+
+## Nutzer, die stonieren vs. Nutzer die nicht stonieren, gemessen an der Verweildauer auf der Website: 
+
+ew_label     |time_category |session_count|
+-------------+--------------+-------------+
+icht stoniert|<= 5 Sekunden |            7|
+icht stoniert|<= 10 Sekunden|        40920|
+icht stoniert|<= 15 Sekunden|       107770|
+icht stoniert|<= 30 Sekunden|       505797|
+icht stoniert|<= 45 Sekunden|       515682|
+icht stoniert|<= 1 Minute   |       415290|
+icht stoniert|<= 5 Minuten  |      3468207|
+icht stoniert|<= 10 Minuten |       235728|
+icht stoniert|<= 15 Minuten |        21931|
+icht stoniert|<= 20 Minuten |         4178|
+icht stoniert|<= 25 Minuten |         1157|
+icht stoniert|<= 30 Minuten |          422|
+icht stoniert|<= 45 Minuten |          258|
+icht stoniert|<= 60 Minuten |           35|
+icht stoniert|<= 90 Minuten |            8|
+icht stoniert|<= 120 Minuten|            3|
+toniert      |<= 10 Minuten |         3226|
+toniert      |<= 15 Minuten |         2499|
+toniert      |<= 20 Minuten |         2431|
+toniert      |<= 25 Minuten |         2408|
+toniert      |<= 30 Minuten |         2366|
+toniert      |<= 45 Minuten |         6248|
+toniert      |<= 60 Minuten |         5448|
+toniert      |<= 90 Minuten |         8689|
+toniert      |<= 120 Minuten|        57355|
+
+## Wie verhalten sich die Stornos gegenüber Discounts? 
+
+year_name|new_label      |total_sessions|flight_discount_true|flight_discount_false|flight_discount_null|hotel_discount_true|hotel_discount_false|hotel_discount_null|
+---------+---------------+--------------+--------------------+---------------------+--------------------+-------------------+--------------------+-------------------+
+2021     |Nicht storniert|        270929|               45275|               225654|                   0|              35265|              235664|                  0|
+2022     |Nicht storniert|       1942854|              323476|              1619378|                   0|             252069|             1690785|                  0|
+2023     |Nicht storniert|       3103610|              517045|              2586565|                   0|             404046|             2699564|                  0|
+2021     |Storniert      |          3132|                3132|                    0|                   0|               3132|                   0|                  0|
+2022     |Storniert      |         32700|               32700|                    0|                   0|              32700|                   0|                  0|
+2023     |Storniert      |         54838|               54838|                    0|                   0|              54838|                   0|                  0|
+
+Beobachtung: 
+- Ausnahmslos alle Stornos hatten einen Flug und Hoteldiscount.
+Interpretation:
+- Vielleicht erfüllen die Discounts nicht ihren Zweck. Andererseits könnte es eine vorherige Marketingaktion gewesen sein. 
+- Vielleicht gibt es Anbieter auf unserer Plattform die nicht mehr die Qualiätsstandarts erfüllen und es zu immer mehr Reklamationen kommt, weil Online zuviele schlechte Bewertungen exisitieren.
+Relevanz: 
+- Das Stornoverhalten hat einen massiven Einfluss und ist daher sehr relevant. 
