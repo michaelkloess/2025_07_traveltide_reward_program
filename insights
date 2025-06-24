@@ -524,3 +524,30 @@ time_block |new_label      |session_count|hour_index|
 21:00–21:59|Storniert      |         7708|        21|
 22:00–22:59|Storniert      |         4296|        22|
 23:00–23:59|Storniert      |          776|        23|
+
+## Stonierung an Wochentagen
+
+weekday|weekday_index|new_label      |session_count|
+-------+-------------+---------------+-------------+
+So     |            0|Nicht storniert|       755061|
+Mo     |            1|Nicht storniert|       763813|
+Di     |            2|Nicht storniert|       764744|
+Mi     |            3|Nicht storniert|       765545|
+Do     |            4|Nicht storniert|       768866|
+Fr     |            5|Nicht storniert|       750039|
+Sa     |            6|Nicht storniert|       749325|
+So     |            0|Storniert      |        12857|
+Mo     |            1|Storniert      |        12949|
+Di     |            2|Storniert      |        12908|
+Mi     |            3|Storniert      |        12993|
+Do     |            4|Storniert      |        13048|
+Fr     |            5|Storniert      |        13087|
+Sa     |            6|Storniert      |        12828|
+
+Beobachtung: Insofern der Syntax nicht verkehrt ist, gibt es kein außergewöhnliches Verhalten zu bestimmten Stonierungsverhalten an Wochentagen.
+Interpretation: 
+Relevanz: 
+
+
+
+
