@@ -1,0 +1,15 @@
+
+Kündigen die Leute, weil ihnen ein Rabbat versprochen wurde, den man dann nicht gewährt hat bzw. verrechnet wurde?
+
+
+select count(*)
+from sessions
+where cancellation = true              -- wurde gecancellt / stoniert 
+and (flight_booked = true)             -- Flug wurde gebucht
+and (hotel_booked = true)              -- Hotel wurde gebucht
+and flight_discount_amount is null     -- es wurde kein Flugrabbat verrechnet
+and hotel_discount_amount is null     -- es wurde kein Hotelrabbat verrechnet
+
+========
+Output: 0
+========
