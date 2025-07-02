@@ -1,4 +1,5 @@
---- Table: users ---  
+
+## Table: users 
 
 | Column Name        | Description                                       | Type    |
 | ------------------ | ------------------------------------------------- | ------- |
@@ -13,9 +14,8 @@
 | `home_airport_lat` | Geographical north-south position of home airport | numeric |
 | `home_airport_lon` | Geographical east-west position of home airport   | numeric |
 | `sign_up_date`     | Date of TravelTide account creation               | date    |
-_____________________________________________________________________________________
 
---- Table: sessions ---  
+## Table: sessions
 
 | Column Name              | Description                          | Type      |
 | ------------------------ | ------------------------------------ | --------- |
@@ -32,9 +32,8 @@ ________________________________________________________________________________
 | `hotel_booked`           | Whether hotel was booked             | bool      |
 | `page_clicks`            | Number of clicks in session          | int4      |
 | `cancellation`           | Whether session was for cancellation | bool      |
-_______________________________________________________________________________
 
---- Table: flights ---  
+## Table: flights 
 
 | Column Name               | Description                      | Type      |
 | ------------------------- | -------------------------------- | --------- |
@@ -51,9 +50,8 @@ _______________________________________________________________________________
 | `destination_airport_lat` | Latitude of destination airport  | numeric   |
 | `destination_airport_lon` | Longitude of destination airport | numeric   |
 | `base_fare_usd`           | Base fare in USD                 | numeric   |
-____________________________________________________________________________
 
---- Table: hotels ---  
+## Table: hotels
 
 | Column Name          | Description                             | Type      |
 | -------------------- | --------------------------------------- | --------- |
@@ -64,17 +62,3 @@ ____________________________________________________________________________
 | `check_in_time`      | Check-in time                           | timestamp |
 | `check_out_time`     | Check-out time                          | timestamp |
 | `hotel_per_room_usd` | Price per room per night (pre-discount) | numeric   |
-______________________________________________________________________________
-
-
-| Command         | Description                                                      |
-|-----------------|------------------------------------------------------------------|
-| `make update`   | Reinstalls the project as editable (`pip install -e .`).         |
-| `make notebook` | Starts a Jupyter Notebook in `./notebooks`.                      |
-| `make clean`    | Deletes all `__pycache__` directories.                           |
-| `make freeze`   | Lists all installed packages.                                    |
-| `make lint`     | Runs `flake8` on `src/`, `notebooks/`, and `tests/`.             |
-| `make format`   | Auto-formats all source files with `black`.                      |
-| `make isort`    | Sorts all imports with `isort`.                                  |
-| `make check`    | Runs `lint`, `format`, and `isort`.                              |
-
