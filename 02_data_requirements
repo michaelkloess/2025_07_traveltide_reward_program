@@ -67,4 +67,14 @@ ____________________________________________________________________________
 ______________________________________________________________________________
 
 
+| Command         | Description                                                      |
+|-----------------|------------------------------------------------------------------|
+| `make update`   | Reinstalls the project as editable (`pip install -e .`).         |
+| `make notebook` | Starts a Jupyter Notebook in `./notebooks`.                      |
+| `make clean`    | Deletes all `__pycache__` directories.                           |
+| `make freeze`   | Lists all installed packages.                                    |
+| `make lint`     | Runs `flake8` on `src/`, `notebooks/`, and `tests/`.             |
+| `make format`   | Auto-formats all source files with `black`.                      |
+| `make isort`    | Sorts all imports with `isort`.                                  |
+| `make check`    | Runs `lint`, `format`, and `isort`.                              |
 
