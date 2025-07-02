@@ -1,110 +1,70 @@
-## Table: users
-----------------------
+--- Table: users ---  
 
-users: user demographic information
--------------------------------------------------------------------------------------------
-user_id: unique user ID (key, int)
--------------------------------------------------------------------------------------------
-birthdate: user date of birth (datetime)
--------------------------------------------------------------------------------------------
-gender: user gender (nominal)
--------------------------------------------------------------------------------------------
-married: user marriage status (binary)
--------------------------------------------------------------------------------------------
-has_children: whether or not the user has children (binary)
--------------------------------------------------------------------------------------------
-home_country: user’s resident country (nominal)
--------------------------------------------------------------------------------------------
-home_city: user’s resident city (nominal)
--------------------------------------------------------------------------------------------
-home_airport: user’s preferred hometown airport (nominal)
--------------------------------------------------------------------------------------------
-home_airport_lat: geographical north-south position of home airport (decimal)
--------------------------------------------------------------------------------------------
-home_airport_lon: geographical east-west position of home airport (decimal)
--------------------------------------------------------------------------------------------
-sign_up_date: date of TravelTide account creation (datetime)
+| Column Name        | Description                                       | Type    |
+| ------------------ | ------------------------------------------------- | ------- |
+| `user_id`          | Unique user ID                                    | int4    | - PK
+| `birthdate`        | User date of birth                                | date    |
+| `gender`           | User gender                                       | text    |
+| `married`          | User marriage status                              | bool    |
+| `has_children`     | Whether the user has children                     | bool    |
+| `home_country`     | User’s resident country                           | text    |
+| `home_city`        | User’s resident city                              | text    |
+| `home_airport`     | User’s preferred hometown airport                 | text    |
+| `home_airport_lat` | Geographical north-south position of home airport | numeric |
+| `home_airport_lon` | Geographical east-west position of home airport   | numeric |
+| `sign_up_date`     | Date of TravelTide account creation               | date    |
+_____________________________________________________________________________________
 
-----------------------
-SESSIONS - TABLE: 
-----------------------
+--- Table: sessions ---  
 
-sessions: information about individual browsing sessions (note: only sessions with at least 2 clicks are included)
--------------------------------------------------------------------------------------------
-session_id: unique browsing session ID (key, string)
--------------------------------------------------------------------------------------------
-user_id: the user ID (foreign key, int)
--------------------------------------------------------------------------------------------
-trip_id: ID mapped to flight and hotel bookings (foreign key, string)
--------------------------------------------------------------------------------------------
-session_start: time of browsing session start (timestamp)
--------------------------------------------------------------------------------------------
-session_end: time of browsing session end (timestamp)
--------------------------------------------------------------------------------------------
-flight_discount: whether or not flight discount was offered (binary)
--------------------------------------------------------------------------------------------
-hotel_discount: whether or not hotel discount was offered (binary)
--------------------------------------------------------------------------------------------
-flight_discount_amount: percentage off base fare (decimal)
--------------------------------------------------------------------------------------------
-hotel_discount_amount: percentage off base night rate (decimal)
--------------------------------------------------------------------------------------------
-flight_booked: whether or not flight was booked (binary)
--------------------------------------------------------------------------------------------
-hotel_booked: whether or not hotel was booked (binary)
--------------------------------------------------------------------------------------------
-page_clicks: number of page clicks during browsing session (int)
--------------------------------------------------------------------------------------------
-cancellation: whether or not the purpose of the session was to cancel a trip (binary)
+| Column Name              | Description                          | Type      |
+| ------------------------ | ------------------------------------ | --------- |
+| `session_id`             | Unique browsing session ID           | text      | - PK
+| `user_id`                | User ID                              | int4      | - FK
+| `trip_id`                | ID mapped to trip bookings           | text      | - FK
+| `session_start`          | Start of session                     | timestamp |
+| `session_end`            | End of session                       | timestamp |
+| `flight_discount`        | Flight discount offered              | bool      |
+| `hotel_discount`         | Hotel discount offered               | bool      |
+| `flight_discount_amount` | Percentage off base fare             | numeric   |
+| `hotel_discount_amount`  | Percentage off base night rate       | numeric   |
+| `flight_booked`          | Whether flight was booked            | bool      |
+| `hotel_booked`           | Whether hotel was booked             | bool      |
+| `page_clicks`            | Number of clicks in session          | int4      |
+| `cancellation`           | Whether session was for cancellation | bool      |
+_______________________________________________________________________________
 
-----------------------
-FLIGHTS - TABLE: 
-----------------------
+--- Table: flights ---  
 
-flights: information about purchased flights
--------------------------------------------------------------------------------------------
-trip_id: unique trip ID (key, string)
--------------------------------------------------------------------------------------------
-origin_airport: user’s home airport (nominal)
--------------------------------------------------------------------------------------------
-destination: destination city (nominal)
--------------------------------------------------------------------------------------------
-destination_airport: airport in destination city (nominal)
--------------------------------------------------------------------------------------------
-seats: number of seats booked (int)
--------------------------------------------------------------------------------------------
-return_flight_booked: whether or not a return flight was booked (binary)
--------------------------------------------------------------------------------------------
-departure_time: time of departure from origin airport (timestamp)
--------------------------------------------------------------------------------------------
-return_time: time of return to origin airport (timestamp)
--------------------------------------------------------------------------------------------
-checked_bags: number of checked bags (int)
--------------------------------------------------------------------------------------------
-trip_airline: airline taking user from origin to destination (nominal)
--------------------------------------------------------------------------------------------
-destination_airport_lat: geographical north-south position of destination airport (decimal)
--------------------------------------------------------------------------------------------
-destination_airport_lon: geographical east-west position of destination airport (decimal)
--------------------------------------------------------------------------------------------
-base_fare_usd: pre-discount price of airfare (decimal)
+| Column Name               | Description                      | Type      |
+| ------------------------- | -------------------------------- | --------- |
+| `trip_id`                 | Unique trip ID                   | text      | - PK
+| `origin_airport`          | User’s home airport              | text      | 
+| `destination`             | Destination city                 | text      |
+| `destination_airport`     | Airport in destination city      | text      |
+| `seats`                   | Number of seats booked           | int4      |
+| `return_flight_booked`    | Return flight booked             | bool      |
+| `departure_time`          | Departure time                   | timestamp |
+| `return_time`             | Return time                      | timestamp |
+| `checked_bags`            | Number of checked bags           | int4      |
+| `trip_airline`            | Airline name                     | text      |
+| `destination_airport_lat` | Latitude of destination airport  | numeric   |
+| `destination_airport_lon` | Longitude of destination airport | numeric   |
+| `base_fare_usd`           | Base fare in USD                 | numeric   |
+____________________________________________________________________________
 
-----------------------
-HOTELS - TABLE: 
-----------------------
+--- Table: hotels ---  
 
-hotels: information about purchased hotel stays
--------------------------------------------------------------------------------------------
-trip_id: unique trip ID (key, string)
--------------------------------------------------------------------------------------------
-hotel_name: hotel brand name (nominal)
--------------------------------------------------------------------------------------------
-nights: number of nights stayed at the hotel (int)
--------------------------------------------------------------------------------------------
-rooms: number of rooms booked with hotel (int)
--------------------------------------------------------------------------------------------
-check_in_time: time user hotel stay begins (timestamp)
--------------------------------------------------------------------------------------------
-check_out_time: time user hotel stay ends (timestamp)
--------------------------------------------------------------------------------------------
-hotel_per_room_usd: pre discount price of hotel stay per room per night (decimal)
+| Column Name          | Description                             | Type      |
+| -------------------- | --------------------------------------- | --------- |
+| `trip_id`            | Unique trip ID                          | text      | - PK
+| `hotel_name`         | Hotel brand name                        | text      |
+| `nights`             | Number of nights stayed                 | int4      |
+| `rooms`              | Number of rooms booked                  | int4      |
+| `check_in_time`      | Check-in time                           | timestamp |
+| `check_out_time`     | Check-out time                          | timestamp |
+| `hotel_per_room_usd` | Price per room per night (pre-discount) | numeric   |
+______________________________________________________________________________
+
+
+
