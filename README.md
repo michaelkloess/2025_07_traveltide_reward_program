@@ -86,7 +86,7 @@ Zentrale Fragestellung:
 
 > Welche Art von Belohnung spricht welche Kunden besonders an?
 
-Das Ziel ist, für jeden Kunden einen wahrscheinlich bevorzugten Vorteil (Perk) zu identifizieren und damit die Conversion der Belohnungseinladung zu erhöhen.
+Das Ziel ist, für jeden Kunden einen wahrscheinlich bevorzugten Vorteil (Perk) zu identifizieren und damit die Conversion der Belohnungseinladung bzw. Kundenbindung zu erhöhen.
 
 ---
 
