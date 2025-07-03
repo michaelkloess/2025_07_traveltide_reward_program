@@ -1,0 +1,52 @@
+{Project_Name}/
+│
+├── README.md                             ← Project overview and goals
+├── requirements.txt                      ← Python dependencies (pip)
+├── .gitignore                            ← Files/folders to exclude from Git
+│
+├── docs/                                 ← Business and project documentation
+│   ├── 01_business_use_case.md           ← Business goals, KPIs, context
+│   ├── 02_data_requirements.md           ← Required data sources and fields
+│   ├── 03_preparing_data.md              ← Data understanding, cleansing steps
+│   ├── 04_exploration_visualization.md   ← EDA insights and hypotheses
+│   ├── 05_modeling_analysis.md           ← Modeling methods and logic
+│   ├── 06_model_evaluation.md            ← Evaluation metrics and validation
+│   ├── 07_deployment_next_steps.md       ← Recommendations or deployment steps
+│   └── glossary.md                       ← Domain terms and definitions
+│
+├── data/                                 ← Organized data storage
+│   ├── raw/                              ← Original unmodified data
+│   ├── external/                         ← Third-party or open data
+│   ├── interim/                          ← Intermediate cleaned or transformed data
+│   └── processed/                        ← Final datasets ready for analysis/modeling
+│
+├── config/                               ← Centralized configuration
+│   └── config.yaml                       ← File paths, model parameters, etc.
+│
+├── src/                                  ← Source code for data handling and modeling
+│   ├── sql/                              ← SQL-based data prep and feature logic
+│   │   ├── clean_data.sql                ← Data cleaning, transformation
+│   │   ├── join_sources.sql              
+│   │   └── feature_engineering.sql
+│   └── py/                               ← Python-based logic and helpers
+│       ├── data_preparation.py           ← Data cleaning, transformation
+│       ├── modeling.py                   ← Training, scoring, segmentation
+│       ├── evaluation.py                 ← Model evaluation, metric computation
+│       └── utils.py                      ← Utility functions (e.g., plots, loaders)
+│
+├── notebooks/                            ← Jupyter notebooks in pipeline order
+│   ├── 01_exploration.ipynb              ← Initial data exploration and visualization
+│   ├── 02_preprocessing.ipynb            ← Preprocessing, feature engineering
+│   ├── 03_modeling.ipynb                 ← Modeling (e.g. clustering, scoring)
+│   └── 04_evaluation.ipynb               ← Evaluation and interpretation of results
+│
+├── outputs/                              ← Outputs generated during analysis
+│   ├── visuals/                          ← Plots, charts, heatmaps, etc.
+│   └── tables/                           ← Exported results (CSV, Excel)
+│
+├── reports/                              ← Final reports and project outcomes
+│   ├── findings/
+│   │   ├── data_observations.md          ← Observations made during EDA
+│   │   └── feature_decisions.md          ← Rationale behind feature selection
+│   ├── summary.md                        ← Summary of results and conclusions
+│   └── presentation.pdf                  ← Presentation slides for stakeholders
