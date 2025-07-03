@@ -1,14 +1,19 @@
+# 📄 Overview
 
-# 🗄️ Table Overview
-| Table             | sessions                                                  | flights                                             | hotels                                                  | users                                                                |
-|-------------------|-----------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
-|                   |                                                           |                                                     |                                                         |                                                                      |
-| Primary key?      | session_id                                                | trip_id                                             | trip_id                                                 | user_id                                                              |
-| Dim/Fct?          | Fact                                                      | Fact                                                | Fact                                                    | Dimensions                                                           |
-| How many rows?    | 13                                                        | 13                                                  | 7                                                       | 11                                                                   |
-| How many columns? | 5408063                                                   | 1901038                                             | 1918617                                                 | 1020926                                                              |
-| What is each row? | Daten zu Nutzer-Sessions, Rabatten und Buchungsverhalten. | Informationen zu gebuchten Flügen und Reisedetails. | Angaben zu Hotelbuchungen, Aufenthaltsdauer und Kosten. | Demografische Nutzerinformationen wie Alter, Geschlecht und Wohnort. |
-| 3NF?              | No                                                        | No                                                  | Yes                                                     | No                                                                   |
+This project uses a ***relational PostgreSQL database*** that forms the analytical foundation for TravelTide’s customer and booking data. </br>
+The schema follows a typical star-like structure consisting of fact and dimension tables, capturing user profiles, session behavior, flight bookings, and hotel stays.
+
+Each table is designed to support both descriptive analytics and personalization logic (e.g., for customer rewards). </br>
+While not all tables are fully normalized (3NF), the design supports performant analytical queries and simplified joins.
+
+Below you’ll find: </br>
+
+➤ A detailed schema description per table </br>
+➤ An overview of key columns with types and meanings </br>
+➤ Classification of dimensions vs. measures </br>
+➤ Metadata overview (keys, normalization, row counts) </br>
+
+---
 
 # 📂 Table: users 
 
@@ -73,3 +78,49 @@
 | `check_in_time`      | Check-in time                           | timestamp |
 | `check_out_time`     | Check-out time                          | timestamp |
 | `hotel_per_room_usd` | Price per room per night (pre-discount) | numeric   |
+
+
+# 🗄️ Table Overview
+| Table             | sessions                                                  | flights                                             | hotels                                                  | users                                                                |
+|-------------------|-----------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
+|                   |                                                           |                                                     |                                                         |                                                                      |
+| Primary key?      | session_id                                                | trip_id                                             | trip_id                                                 | user_id                                                              |
+| Dim/Fct?          | Fact                                                      | Fact                                                | Fact                                                    | Dimensions                                                           |
+| How many rows?    | 13                                                        | 13                                                  | 7                                                       | 11                                                                   |
+| How many columns? | 5408063                                                   | 1901038                                             | 1918617                                                 | 1020926                                                              |
+| What is each row? | Daten zu Nutzer-Sessions, Rabatten und Buchungsverhalten. | Informationen zu gebuchten Flügen und Reisedetails. | Angaben zu Hotelbuchungen, Aufenthaltsdauer und Kosten. | Demografische Nutzerinformationen wie Alter, Geschlecht und Wohnort. |
+| 3NF?              | No                                                        | No                                                  | Yes                                                     | No                                                                   |
+
+# 🗄️ Schema Structure: Key Dimensions and Metrics by Table
+
+|          | Dimensions              | Measures               |
+|----------|-------------------------|------------------------|
+| sessions | session_id              | session_start          |
+|          | user_id                 | session_end            |
+|          | trip_id                 | page_clicks            |
+|          | flight_discount         | flight_discount_amount |
+|          | flight_booked           | hotel_discount         |
+|          | hotel_booked            | -                      |
+|          | cancellation            | -                      |
+| hotels   | trip_id                 | nights                 |
+|          | hotel_name              | rooms                  |
+|          | -                       | check_in_time          |
+|          | -                       | check_out_time         |
+|          | -                       | hotel_per_room_usd     |
+| flights  | trip_id                 | seats                  |
+|          | origin_airport          | departure_time         |
+|          | destination             | return_time            |
+|          | destination_airport     | checked_bags           |
+|          | return_flight_booked    | base_fare_usd          |
+|          | trip_airline            | -                      |
+|          | destination_airport_lat | -                      |
+|          | destination_airport_lon | -                      |
+| users    | user_id                 | birthdate              |
+|          | gender                  | sign_up_date           |
+|          | married                 | -                      |
+|          | has_children            | -                      |
+|          | home_country            | -                      |
+|          | home_city               | -                      |
+|          | home_airport            | -                      |
+|          | home_airport_lat        | -                      |
+|          | home_airport_lon        | -                      |
