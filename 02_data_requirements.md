@@ -1,5 +1,5 @@
 
-## 🗃️ Table Overview
+# 🗄️ Table Overview
 | Table             | sessions                                                  | flights                                             | hotels                                                  | users                                                                |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
 |                   |                                                           |                                                     |                                                         |                                                                      |
@@ -10,11 +10,11 @@
 | What is each row? | Daten zu Nutzer-Sessions, Rabatten und Buchungsverhalten. | Informationen zu gebuchten Flügen und Reisedetails. | Angaben zu Hotelbuchungen, Aufenthaltsdauer und Kosten. | Demografische Nutzerinformationen wie Alter, Geschlecht und Wohnort. |
 | 3NF?              | No                                                        | No                                                  | Yes                                                     | No                                                                   |
 
-## 📂 Table: users 
+# 📂 Table: users 
 
 | Column Name        | Description                                       | Type        |
 | ------------------ | ------------------------------------------------- | ------------|
-| `user_id`          | Unique user ID                                    | int         |
+| `user_id` 🔑       | Unique user ID                                    | int         |
 | `birthdate`        | User date of birth                                | date        |
 | `gender`           | User gender                                       | text        |
 | `married`          | User marriage status                              | bool        |
@@ -26,13 +26,13 @@
 | `home_airport_lon` | Geographical east-west position of home airport   | numeric     |
 | `sign_up_date`     | Date of TravelTide account creation               | date        |
 
-## 📂 Table: sessions
+# 📂 Table: sessions
 
 | Column Name              | Description                          | Type      |
 | ------------------------ | ------------------------------------ | --------- |
-| `session_id`             | Unique browsing session ID           | text      | 
-| `user_id`                | User ID                              | int       | 
-| `trip_id`                | ID mapped to trip bookings           | text      | 
+| `session_id` 🔑          | Unique browsing session ID           | text      | 
+| `user_id` 🔑             | User ID                              | int       | 
+| `trip_id` 🔑             | ID mapped to trip bookings           | text      | 
 | `session_start`          | Start of session                     | timestamp |
 | `session_end`            | End of session                       | timestamp |
 | `flight_discount`        | Flight discount offered              | bool      |
@@ -44,11 +44,11 @@
 | `page_clicks`            | Number of clicks in session          | int       |
 | `cancellation`           | Whether session was for cancellation | bool      |
 
-## 📂 Table: flights 
+# 📂 Table: flights 
 
 | Column Name               | Description                      | Type      |
 | ------------------------- | -------------------------------- | --------- |
-| `trip_id`                 | Unique trip ID                   | text      | 
+| `trip_id` 🔑              | Unique trip ID                   | text      | 
 | `origin_airport`          | User’s home airport              | text      | 
 | `destination`             | Destination city                 | text      |
 | `destination_airport`     | Airport in destination city      | text      |
@@ -62,11 +62,11 @@
 | `destination_airport_lon` | Longitude of destination airport | numeric   |
 | `base_fare_usd`           | Base fare in USD                 | numeric   |
 
-## 📂 Table: hotels
+# 📂 Table: hotels
 
 | Column Name          | Description                             | Type      |
 | -------------------- | --------------------------------------- | --------- |
-| `trip_id`            | Unique trip ID                          | text      |
+| `trip_id` 🔑         | Unique trip ID                          | text      |
 | `hotel_name`         | Hotel brand name                        | text      |
 | `nights`             | Number of nights stayed                 | int       |
 | `rooms`              | Number of rooms booked                  | int       |
