@@ -17,23 +17,7 @@ home_country: usa, canada
 home_city: 105 cities
 home_airport: 159 airports
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+!!!!!! No Data Cleaning in users Table requiert
 
 -----------------------------------------------
 Table: sessions
@@ -56,7 +40,9 @@ Bedeutet: 691380 hotel discounts wurden vergeben
 
 Gesamtanzahl Klicks: 5.408.063
 
-
+Data Cleansing : 
+-- Null-Werte in hotel_discount_amount -> wurde ein Discount gewährt hotel_discount (true) oder nicht? 
+-- Selbige gilt für flight_discount_amount
 
 
 
@@ -73,6 +59,18 @@ Es gibt keine Duplikate
 
 
 
+Nachverfolgen: Woran liegt das? 
+---
+Es gibt 90670 Einträge, in denen gebucht wurde, Discount aktiviert wurde, und dann auch wieder stoniert wurde. 
+2021	3132
+2022	32700
+2023	54838
+---
+
+88.734 Leute haben keinen Rückflug gebucht
+
+
+
 
 -----------------------------------------------
 Table: hotels
@@ -82,6 +80,10 @@ Table: hotels
 Es gibt keine Null-Werte
 Es gibt keine Dupliakte
 
+---
+Data Cleansing: 
+-- Es gibt negative Hotelnächte
+-- Es gibt check-in / check-out Zeitfenster von 0.0004375 Sekunden. 
 
 
 
