@@ -36,9 +36,10 @@
 │
 ├── 05_notebooks/                         ← Jupyter notebooks in pipeline order
 │   ├── 01_exploration.ipynb              ← Initial data exploration and visualization
-│   ├── 02_preprocessing.ipynb            ← Preprocessing, feature engineering
-│   ├── 03_modeling.ipynb                 ← Modeling (e.g. clustering, scoring)
-│   └── 04_evaluation.ipynb               ← Evaluation and interpretation of results
+│   ├── 02_cleansing.ipynb                ← Data Cleansing 
+│   ├── 03_preprocessing.ipynb            ← Preprocessing, feature engineering
+│   ├── 04_modeling.ipynb                 ← Modeling (e.g. clustering, scoring)
+│   └── 05_evaluation.ipynb               ← Evaluation and interpretation of results
 │
 ├── 06_outputs/                           ← Outputs generated during analysis
 │   ├── visuals/                          ← Plots, charts, heatmaps, etc.
