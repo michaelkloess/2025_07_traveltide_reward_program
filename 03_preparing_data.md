@@ -87,5 +87,37 @@ Data Cleansing:
 
 
 
+In der Tabelle hotels gab es 12.067 nights Einträge, die im negativen Bereich lagen. 
+Mit einer Query wird geschaut, ob check_in_time und check_out_time verkehrt herum eingefügt wurden und dreht diese wieder um - auf den korrigierten Werten wird dann eine Aufenthaltsdauer berechnet. 
+Es werden alle Hotelbesuche, die unter 24h (also 23:59h) liegen, seperat aufgeführt. 
+Alles darüber wird als volle Nächte betrachtet. 
+
+Nachdem die Korrektur für alle 1.918.617 Einträge durchgelaufen ist, wurde ersichtlich, dass es extrem viele Aufenthaltsdauer von sehr kurzer Dauer gibt. 38483 Einträge mit einer Dauer von unter 2h - tendenziell eher weniger. Mögliche Gründe: Fehlbuchungen, Tests, Bots, Stornos. Für weitere Analysen werden nur duration_hours berücksichtigt, die >= 2h sind.
+
+-- Alle Werte, ohne >= 2h Filter -- 
+![Bildschirmfoto 2025-07-07 um 00 54 32](https://github.com/user-attachments/assets/4a1a759a-6025-4c6b-99bb-56d968854c5f)
+
+-- Nur Werte, mit einem Filter von Werten mit >= 2h
+![Bildschirmfoto 2025-07-07 um 00 55 13](https://github.com/user-attachments/assets/dd1c7ac2-33d7-40c3-a30f-dbb7062b1e98)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
