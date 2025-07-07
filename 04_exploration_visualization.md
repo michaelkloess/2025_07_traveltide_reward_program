@@ -32,4 +32,32 @@ Table: users
 29. Question: How much is booked per year, per country on holidays compared to non-holidays?
 30. Question: What is the booking behavior of individual users in different countries, on certain holidays throughout the year, with/without children and married/unmarried?
 -- Antwort: Der größter Unterschied besteht im Kulturellen Unterschied zwischen Amerika und Kanada. Die Kanadier buchen im Vergleich zu Amerika an Feiertage weniger.
--- Antwort: Amerikaner scheinen über die Feiertage teilweise spontaner zu sein, oder arbeiten einfach weiter, ohne frei zu machen. 
+-- Antwort: Amerikaner scheinen über die Feiertage teilweise spontaner zu sein, oder arbeiten einfach weiter, ohne frei zu machen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
