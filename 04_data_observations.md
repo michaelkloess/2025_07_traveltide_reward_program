@@ -1,0 +1,4 @@
+- Table: users
+- Table: sessions
+- Table: flights
+- Table: hotels
