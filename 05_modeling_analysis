@@ -1,3 +1,188 @@
+Segmentation  
+│  
+├── Spontaneous Adventurers  
+│   ├── Behavior  
+│   │    ├── Short time span between session and departure  
+│   │    ├── Mostly single bookings (flight or hotel)  
+│   │    ├── High click volume per session, frequent use but irregular bookings  
+│   │    └── Bookings often in countries with low lead time (e.g., domestic European flights)  
+│   │  
+│   ├── Features  
+│   │    ├── Low value for (session_start - departure_time)  
+│   │    ├── hotel_booked or flight_booked = true  
+│   │    ├── Session duration is short to medium  
+│   │    ├── High page_clicks, hotel_discount or flight_discount is active  
+│   │    └── return_flight_booked = false  
+│   │  
+│   └── Perks  
+│       ├── Digital spin-the-wheel with surprise discounts  
+│       ├── Last-minute bundles  
+│       ├── Instant booking bonus  
+│       ├── Gamified “3-click trip” experiences  
+│       ├── Exclusive weekend flash deals  
+│       ├── Mystery trip option (destination revealed later)  
+│       ├── Instant reward points after booking  
+│       ├── Free cancellation  
+│       ├── Push notifications for time-sensitive deals  
+│       └── Combo benefits for spontaneous flight + hotel bookings  
+│  
+│ 
+├── Business Travelers  
+│   ├── Behavior  
+│   │    ├── Frequent short trips during weekdays  
+│   │    ├── Flights and hotels are booked together, often with return flight  
+│   │    ├── Early planning and booking  
+│   │    └── Destinations are business hubs or MICE hotels  
+│   │  
+│   ├── Features  
+│   │    ├── return_flight_booked = true  
+│   │    ├── Stay duration ≤ 3 nights, travel days = Mon–Fri  
+│   │    ├── flight_booked AND hotel_booked = true  
+│   │    └── High booking continuity  
+│   │  
+│   └── Perks  
+│        ├── Subscription model with pricing benefits  
+│        ├── Business lounge access  
+│        ├── More flexible cancellation policies  
+│        ├── Calendar sync for trip planning  
+│        ├── Miles/points program  
+│        ├── Express check-in via app  
+│        ├── Airport shuttle service  
+│        ├── Travel expense PDF export  
+│        ├── Priority support  
+│        └── Stable Wi-Fi  
+│  
+│
+├── Luxury Travelers  
+│   ├── Behavior  
+│   │    ├── High spend on flights and hotels  
+│   │    ├── Few sessions, quick decision-making  
+│   │    ├── Rare use of discounts  
+│   │    └── Focus on comfort and brand status  
+│   │  
+│   ├── Features  
+│   │    ├── base_fare_usd and hotel_per_room significantly above median  
+│   │    ├── hotel_booked AND flight_booked = true  
+│   │    ├── Short sessions, few clicks  
+│   │    ├── hotel_discount = false  
+│   │    └── flight_discount = false  
+│   │  
+│   └── Perks  
+│        ├── Concierge service via app  
+│        ├── Business lounge access  
+│        ├── VIP support (phone + chat)  
+│        ├── Private transfer included  
+│        ├── Priority check-in & boarding  
+│        ├── Exclusive events at destination  
+│        ├── Sustainability points with premium charity options  
+│        ├── Gift at booking (e.g. wine, wellness voucher)  
+│        ├── Monthly “Luxury Surprise Drop”  
+│        └── Premium partner perks (streaming, lifestyle products)  
+│  
+│
+├── Family Travelers  
+│   ├── Behavior  
+│   │    ├── has_children = true  
+│   │    ├── More rooms or longer stays  
+│   │    └── Combined bookings with fixed dates (school holidays)  
+│   │  
+│   ├── Features  
+│   │    ├── rooms ≥ 2, nights ≥ 7  
+│   │    ├── has_children = true  
+│   │    └── trip dates align with holiday calendar  
+│   │  
+│   └── Perks  
+│        ├── Kids stay free  
+│        ├── Family bundle deals  
+│        ├── Child-friendly app content  
+│        ├── Cheaper family travel insurance  
+│        ├── Curated family accommodations  
+│        ├── School holiday reminder tool  
+│        ├── Theme park discounts  
+│        ├── “Parents need a break” surprises  
+│        ├── Family travel checklists  
+│        └── Emergency translator service  
+│  
+│
+├── Budget Travelers  
+│   ├── Behavior  
+│   │    ├── Long session durations, high clicks  
+│   │    ├── Discount- and voucher-driven  
+│   │    └── Bookings usually only flight or hotel  
+│   │  
+│   ├── Features  
+│   │    ├── page_clicks = high  
+│   │    ├── flight_discount OR hotel_discount = true  
+│   │    ├── flight_discount_amount > median  
+│   │    ├── Higher cancellation rate  
+│   │    └── Low total cost (base_fare + hotel_per_room)  
+│   │  
+│   └── Perks  
+│        ├── Instant discount with gift cards  
+│        ├── Discounts for returning users  
+│        ├── Budget-focused cross-selling  
+│        ├── Price alerts for wishlist destinations  
+│        ├── Free currency exchange  
+│        ├── Gamification via discount points  
+│        ├── Free random upgrade to 1st class  
+│        ├── Cashback for specific behavior  
+│        ├── Bonus for 3+ bookings per quarter  
+│        └── Budget flight & hostel comparison bundles  
+│  
+│
+├── Young Travelers  
+│   ├── Behavior  
+│   │    ├── Age under 25  
+│   │    ├── Budget-focused  
+│   │    ├── Often group travel or hostels  
+│   │    ├── High engagement, social media active  
+│   │    └── Party destinations preferred  
+│   │  
+│   ├── Features  
+│   │    ├── age < 25 (from birthdate)  
+│   │    ├── booking_amount = low  
+│   │    └── High click and session frequency  
+│   │  
+│   └── Perks  
+│       ├── Digital spin-the-wheel  
+│       ├── Discounts for partners (clubs, bars, parks)  
+│       ├── Group booking discounts  
+│       ├── Social media sharing bonus  
+│       ├── Streaming platform discounts  
+│       ├── Early access to flash deals  
+│       ├── “Refer 3, travel free” deals  
+│       ├── Discovery cards with small rewards  
+│       ├── Free event tickets  
+│       └── Gamified badges (e.g. “First Trip Alone”)  
+│  
+│ 
+└── Cultural Travelers
+    ├── Behavior  
+    │    ├── Longer stays in urban destinations  
+    │    ├── Combined booking (flight + hotel)  
+    │    └── Interest in historical or cultural sites  
+    │  
+    ├── Features  
+    │    ├── nights > 5  
+    │    ├── destination = urban  
+    │    ├── hotel_booked = true  
+    │    └── check_in_time → stay duration > median  
+    │  
+    └── Perks  
+        ├── Exclusive city passes for museums/culture  
+        ├── Free digital travel guides  
+        ├── Culture-matched recommendations  
+        ├── Early check-in & late check-out  
+        ├── Community tips (UGC)  
+        ├── Invitations to local events  
+        ├── “Travel to your favorite artist” bundles  
+        ├── AI-based hidden gems  
+        ├── Cultural insights newsletter  
+        └── Local culture charity options  
+
+
+
+
 In der CASE WHEN Logik Percentile benutzen - ansonsten gehts offenbar nicht so gut.
 ChatGPT fragen - wieso, weshalb, warum! 
 Aussagen aus Live-Session von Lililya 
@@ -5,3 +190,112 @@ Aussagen aus Live-Session von Lililya
 
 Flugreichweite alleine reicht nicht aus. 
 Man muss auch Kosten pro Kilometer beachten, wenn man in die Segmentierung geht, da man Kurz und Langstrecke jewweils für günstig und teuer kaufen kann! 
+
+
+Best Western
+Budgetreisender: Preislich attraktiv, einfache Ausstattung, Belohnungsprogramm für günstiges Reisen 
+FlyerTalk
+Wikipedia
++4
+Skift
++4
+bestwestern.de
++4
+
+Geschäftsreisender: Business-freundlich, Loyalty-Programm mit Mietwagenpunkten, Fokus auf digitale Buchungslösungen
+
+Familienreisender: Viele Anlagen mit Familienzimmern und “non-business leisure stays”
+
+Aman Resorts
+Luxusreisender: Ultra-luxuriöse Einrichtungen, exklusive Lage, Privatvillen, Wellness & Design von Weltklasse
+
+Kulturreisender: Kulturbewusste Architektur, historische Stätten vor Ort, kulturelle Beratung (z. B. Amantaka) 
+Wikipedia
+
+Spontaner Abenteurer: Resorts in einzigartigen Naturumgebungen (Wüste, Urwald, Berge) mit Aktivprogramm 
+Reddit
++8
+Aman
++8
+Beaumonde Traveler
++8
+
+Familienreisender & Luxusreisender: Große Villen, Privatsphäre, Wellness-Angebote, ideal für ungestörte Familienzeit
+
+Four Seasons (aus Reddit-Zitat)
+Luxusreisender: Verlässliche Premiumqualität, hochwertige Locations (z. B. Stadtzentren und Resorts)
+
+Geschäftsreisender: Zentral gelegene City-Hotels mit Business-Standards
+
+(Weitere Marken – exemplarisch skizziert)
+Ich beschreibe hier stichpunktartig typische Positionierungen:
+
+Hilton / Conrad / Crowne Plaza / Marriott / Hyatt / Radisson / InterContinental / Starwood / Sheraton usw.
+
+Geschäftsreisender: Meetingräume, Airportnähe, Business-Services
+
+Familienreisender: Familienzimmer, Pools, Kinderfreundlichkeit
+
+Luxusreisender (bei höherklassigen Marken wie Conrad, Park Hyatt)
+
+Shangri‑La / Rosewood / Fairmont / Accor‑Luxus‐Marken
+
+Luxusreisender, Kulturreisender: Oft großzügige Häuser mit lokalem Design & hochwertigen Spa-Bereichen
+
+Extended Stay / Wyndham / Choice Hotels
+
+Budgetreisender + Geschäftsreisender + Familienreisender: Längere Aufenthalte, Küchen, günstige Preise
+
+Banyan Tree
+
+Luxus-/Wellnessreisender: Private Villen mit Pool, Spa, asiatische Entspannungskultur
+
+Four Seasons, Fairmont, Rosewood, InterContinental
+
+Luxus‑ & Geschäftsklassen: Hochwertiger Service, internationale Standards, starke Präsenz in Metropolen
+
+Hyatt
+
+Spontaner Abenteurer: Lifestyle‑Marken in Großstädten
+
+Geschäftsreisender: Globales Portfolio, Meetings, Lounge-Zugänge
+
+Familienreisender: Hotels mit Kinderangebot
+
+NH Hotel
+Geschäftsreisender: Stark in Europa, Business-Fokus, zentrale Lagen
+
+Kulturreisender: Viele Häuser in historischen Städten
+
+Budget‑/Mittelklasse‑Reisender: Faire Preise, gutes Preis-Leistungs-Verhältnis
+
+==================================================
+
+Segmentierung: 
+
+Luxusreisender: 
+
+- sollte in einem namenhaften Hotel teuer gebucht haben
+- Bestimmte Hotels? MICE: 
+
+
+Spontaner Abenteurer: 
+- Hotels: Aman (Natur), Banyan Tree (Wellness in exotischen Lagen), Four Seasons (Resort-)
+
+Geschäftsreisender	
+- Hilton‑Gruppe, Marriott, Conrad, Crowne Plaza, NH, InterContinental, Hyatt
+
+Luxusreisender: 
+- Hotels: Aman, Four Seasons, Rosewood, Fairmont, Shangri‑La, Banyan Tree
+
+Familienreisender	
+- Hotels: Best Western, Marriott, Hyatt, Wyndham, Choice Hotels, Extended Stay
+
+Budgetreisender
+- Hotels: Best Western, Extended Stay, Wyndham, Choice Hotels, NH (Mittelklasse)
+
+Jugendreisender
+- Hotels: Hyatt (lifestyle), Hilton (zentrale City), Marriott (Tribute, Moxy), Choice
+
+Kulturreisender	
+- Hotels: Aman, NH Hotel, Rosewood, Shangri‑La, Accor‑Häuser in historischen Städten
