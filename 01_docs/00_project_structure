@@ -18,24 +18,24 @@ TravelTide/
 │   └── 10_glossary.md                    ← Domain terms and definitions
 │
 ├── 02_data/                              ← Organized data storage
-│   ├── raw/                              ← Original unmodified data
-│   ├── external/                         ← Third-party or open data
-│   ├── interim/                          ← Intermediate cleaned or transformed data
-│   └── processed/                        ← Final datasets ready for analysis/modeling
+│   ├── 01_raw/                           ← Original unmodified data
+│   ├── 02_external/                      ← Third-party or open data
+│   ├── 03_interim/                       ← Intermediate cleaned or transformed data
+│   └── 04_processed/                     ← Final datasets ready for analysis/modeling
 │
 ├── 03_config/                            ← Centralized configuration
-│   └── config.yaml                       ← File paths, model parameters, etc.
+│   └── 01_config.yaml                    ← File paths, model parameters, etc.
 │
 ├── 04_src/                               ← Source code for data handling and modeling
-│   ├── sql/                              ← SQL-based data prep and feature logic
-│   │   ├── clean_data.sql                ← Data cleaning, transformation
-│   │   ├── join_sources.sql              
-│   │   └── feature_engineering.sql
-│   └── py/                               ← Python-based logic and helpers
-│       ├── data_preparation.py           ← Data cleaning, transformation
-│       ├── modeling.py                   ← Training, scoring, segmentation
-│       ├── evaluation.py                 ← Model evaluation, metric computation
-│       └── utils.py                      ← Utility functions (e.g., plots, loaders)
+│   ├── 01_sql/                           ← SQL-based data prep and feature logic
+│   │   ├── 01_clean_data.sql             ← Data cleaning, transformation
+│   │   ├── 02_join_sources.sql              
+│   │   └── 03_feature_engineering.sql
+│   └── 02_py/                            ← Python-based logic and helpers
+│       ├── 01_data_preparation.py        ← Data cleaning, transformation
+│       ├── 02_modeling.py                ← Training, scoring, segmentation
+│       ├── 03_evaluation.py              ← Model evaluation, metric computation
+│       └── 04_utils.py                   ← Utility functions (e.g., plots, loaders)
 │
 ├── 05_notebooks/                         ← Jupyter notebooks in pipeline order
 │   ├── 01_exploration.ipynb              ← Initial data exploration and visualization
@@ -45,9 +45,9 @@ TravelTide/
 │   └── 05_evaluation.ipynb               ← Evaluation and interpretation of results
 │
 ├── 06_outputs/                           ← Outputs generated during analysis
-│   ├── visuals/                          ← Plots, charts, heatmaps, etc.
-│   └── tables/                           ← Exported results (CSV, Excel)
+│   ├── 01_visuals/                       ← Plots, charts, heatmaps, etc.
+│   └── 02_tables/                        ← Exported results (CSV, Excel)
 │
 └── 07_reports/                           ← Final reports and project outcomes
-    ├── summary.md                        ← Summary of results and conclusions
-    └── presentation.pdf                  ← Presentation slides for stakeholders
+    ├── 01_summary.md                     ← Summary of results and conclusions
+    └── 02_presentation.pdf               ← Presentation slides for stakeholders
