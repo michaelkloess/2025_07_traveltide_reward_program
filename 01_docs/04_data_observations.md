@@ -55,7 +55,7 @@ Data Cleansing :
 Es fehlen 88734 return_time angeben. Ggf. wurden keine Rückflüge gebucht, bzw. angetreten.
 Es gibt keine Duplikate
 
-
+Es gibt viele sehr kurze Sessiondauer. Die kürzeste ist 7 Sekunden. Springen also direkt wieder ab. 
 
 
 Nachverfolgen: Woran liegt das? 
