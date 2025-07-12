@@ -5,15 +5,17 @@ TravelTide/
 ├── .gitignore                            ← Files/folders to exclude from Git
 │
 ├── 01_docs/                              ← Business and project documentation
+│   ├── 00_project_structure              ← Overview of folders, file purposes, and project organization
 │   ├── 01_business_use_case.md           ← Business goals, KPIs, context
 │   ├── 02_data_requirements.md           ← Required data sources and fields
 │   ├── 03_preparing_data.md              ← Data understanding, cleansing steps
 │   ├── 04_data_observations.md           ← Observations made during EDA
-│   ├── 05_feature_decisions.md           ← Rationale behind feature selection
-│   ├── 06_model_evaluation.md            ← Evaluation metrics and validation
-│   ├── 07_deployment_next_steps.md       ← Recommendations or deployment steps
+│   ├── 05_cohort_definition.md           ← Definition of the agreed cohort segmentation
+│   ├── 06_feature_decisions.md           ← Rationale behind feature selection
+│   ├── 07_model_evaluation.md            ← Evaluation metrics and validation
 │   ├── 08_bias_injection_log.md          ← Log of where and how bias was introduced
-│   └── 09_glossary.md                    ← Domain terms and definitions
+│   ├── 09_deployment_next_steps.md       ← Recommendations or deployment steps
+│   └── 10_glossary.md                    ← Domain terms and definitions
 │
 ├── 02_data/                              ← Organized data storage
 │   ├── raw/                              ← Original unmodified data
@@ -49,4 +51,3 @@ TravelTide/
 └── 07_reports/                           ← Final reports and project outcomes
     ├── summary.md                        ← Summary of results and conclusions
     └── presentation.pdf                  ← Presentation slides for stakeholders
-
