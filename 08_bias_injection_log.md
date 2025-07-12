@@ -11,3 +11,8 @@ hotel_namen bei Buchung.
 airline bei Buchung? 
 
 
+check_in_time & check_out_time korrigiert, wenn sie vertausch war und darauf neue nächte berechnet: 
+
+- wenn check_in_time > check_out_time = nichts tauschen - nächte auf Werten berechnen
+- wenn check_in_time < check_out_time = Werte vertauschen - nächte auf Werten berechnen
+
