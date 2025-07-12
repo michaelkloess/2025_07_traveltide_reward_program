@@ -220,12 +220,20 @@ Segmentation
 │       ├── Free event tickets  
 │       └── Gamified badges (e.g. “First Trip Alone”)  
 │ 
-└── Cultural Travelers
+└── Lost Opportunities  
+    ├── Features 
+    ├── Behavior 
+    └── Perks  
+
+
+
+
+
     ├── Features  
     │    ├── nights > 5  
     │    ├── destination = urban  
     │    ├── hotel_booked = true  
-    │    └── check_in_time → stay duration > median
+    │    └── check_in_time - stay duration > median
     │    └── Preferred Hotel Types & Chains  
     │         ├── Accor (MGallery, Sofitel) – culture-oriented hotels  
     │         ├── NH Hotels – central locations in cultural cities  
@@ -235,12 +243,12 @@ Segmentation
     │         ├── Hyatt (Centric, historic grand hotels)  
     │         └── Boutique hotels – city-based, culturally relevant  
     │
-    ├── Behavior  
+ 
     │    ├── Longer stays in urban destinations  
     │    ├── Combined booking (flight + hotel)  
     │    └── Interest in historical or cultural sites  
     │  
-    └── Perks  
+
         ├── Exclusive city passes for museums/culture  
         ├── Free digital travel guides  
         ├── Culture-matched recommendations  
