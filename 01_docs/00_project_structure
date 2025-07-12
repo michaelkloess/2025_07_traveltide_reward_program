@@ -5,7 +5,7 @@ TravelTide/
 ├── .gitignore                            ← Files/folders to exclude from Git
 │
 ├── 01_docs/                              ← Business and project documentation
-│   ├── 00_project_structure              ← Overview of folders, file purposes, and project organization
+│   ├── 00_project_structure.md           ← Overview of folders, file purposes, and project organization
 │   ├── 01_business_use_case.md           ← Business goals, KPIs, context
 │   ├── 02_data_requirements.md           ← Required data sources and fields
 │   ├── 03_preparing_data.md              ← Data understanding, cleansing steps
@@ -50,4 +50,5 @@ TravelTide/
 │
 └── 07_reports/                           ← Final reports and project outcomes
     ├── 01_summary.md                     ← Summary of results and conclusions
-    └── 02_presentation.pdf               ← Presentation slides for stakeholders
+    ├── 02_presentation.pdf               ← Presentation slides for stakeholders
+    └── 03_storytelling.md                ← Visuals and text modules for narrative presentation of results 
