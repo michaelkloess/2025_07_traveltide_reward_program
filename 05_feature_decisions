@@ -6,7 +6,13 @@ Segmentation
 │   │    ├── hotel_booked or flight_booked = true  
 │   │    ├── Session duration is short to medium  
 │   │    ├── High page_clicks, hotel_discount or flight_discount is active  
-│   │    └── return_flight_booked = false
+│   │    ├── return_flight_booked = false
+│   │    └── Preferred Hotel Types & Chains  
+│   │         ├── Moxy (Marriott) – young, stylish, digital-first  
+│   │         ├── NH Hotels – central, short-notice availability  
+│   │         ├── Choice Hotels – basic city options  
+│   │         ├── Best Western – wide coverage, often available  
+│   │         └── Wyndham – affordable urban hotels  
 │   │
 │   ├── Behavior  
 │   │    ├── Short time span between session and departure  
@@ -31,7 +37,15 @@ Segmentation
 │   │    ├── return_flight_booked = true  
 │   │    ├── Stay duration ≤ 3 nights, travel days = Mon–Fri  
 │   │    ├── flight_booked AND hotel_booked = true  
-│   │    └── High booking continuity 
+│   │    └── High booking continuity
+│   │    └── Preferred Hotel Types & Chains  
+│   │         ├── Hilton (Garden Inn, DoubleTree) – business-focused  
+│   │         ├── Marriott (Courtyard, Sheraton) – central business hotels  
+│   │         ├── NH Hotels – MICE-compatible  
+│   │         ├── Crowne Plaza (IHG) – known for meetings  
+│   │         ├── Hyatt Place / Regency – business comfort  
+│   │         ├── InterContinental – upscale corporate stays  
+│   │         └── Accor – business and conference orientation  
 │   │
 │   ├── Behavior  
 │   │    ├── Frequent short trips during weekdays  
@@ -57,7 +71,18 @@ Segmentation
 │   │    ├── hotel_booked AND flight_booked = true  
 │   │    ├── Short sessions, few clicks  
 │   │    ├── hotel_discount = false  
-│   │    └── flight_discount = false  
+│   │    └── flight_discount = false
+│   │    └── Preferred Hotel Types & Chains  
+│   │         ├── Aman – exclusivity and serenity  
+│   │         ├── Banyan Tree – wellness resorts  
+│   │         ├── Four Seasons – global luxury brand  
+│   │         ├── Rosewood – cultural & elegant  
+│   │         ├── Shangri-La – refined Asian luxury  
+│   │         ├── Fairmont – iconic heritage properties  
+│   │         ├── Conrad (Hilton) – modern luxury  
+│   │         ├── InterContinental (Luxury tier) – urban premium  
+│   │         ├── Park Hyatt / Grand Hyatt – top-tier service  
+│   │         └── Marriott (Ritz-Carlton, Luxury Collection) – world-renowned
 │   │
 │   ├── Behavior  
 │   │    ├── High spend on flights and hotels  
@@ -81,7 +106,16 @@ Segmentation
 │   ├── Features  
 │   │    ├── rooms ≥ 2, nights ≥ 7  
 │   │    ├── has_children = true  
-│   │    └── trip dates align with holiday calendar 
+│   │    └── trip dates align with holiday calendar
+│   │    └── Preferred Hotel Types & Chains  
+│   │         ├── Marriott (Residence Inn, Autograph Collection) – family focus  
+│   │         ├── Hilton (Homewood Suites, family-friendly resorts)  
+│   │         ├── NH Hotels – affordable family rooms  
+│   │         ├── Best Western – family-oriented options  
+│   │         ├── Wyndham – vacation properties  
+│   │         ├── Extended Stay – suitable for long stays with kids  
+│   │         ├── Choice Hotels (with Family Suites)  
+│   │         └── Accor (e.g., Novotel) – family packages  
 │   │
 │   ├── Behavior  
 │   │    ├── has_children = true  
@@ -106,7 +140,15 @@ Segmentation
 │   │    ├── flight_discount OR hotel_discount = true  
 │   │    ├── flight_discount_amount > median  
 │   │    ├── Higher cancellation rate  
-│   │    └── Low total cost (base_fare + hotel_per_room) 
+│   │    └── Low total cost (base_fare + hotel_per_room)
+│   │    └── Preferred Hotel Types & Chains  
+│   │         ├── Extended Stay – affordable for long stays  
+│   │         ├── Choice Hotels (Econo Lodge, Rodeway Inn) – budget-friendly  
+│   │         ├── Best Western – good pricing & availability  
+│   │         ├── Wyndham (Super 8, Days Inn) – economical choices  
+│   │         ├── NH Hotels – mid-range pricing  
+│   │         ├── Moxy – affordable lifestyle brand  
+│   │         └── Accor (Ibis, Ibis Budget) – basic accommodation 
 │   │ 
 │   ├── Behavior  
 │   │    ├── Long session durations, high clicks  
@@ -129,7 +171,14 @@ Segmentation
 │   ├── Features  
 │   │    ├── age < 25 (from birthdate)  
 │   │    ├── booking_amount = low  
-│   │    └── High click and session frequency  
+│   │    └── High click and session frequency
+│   │    └── Preferred Hotel Types & Chains  
+│   │         ├── Moxy (Marriott) – youth-driven, Instagram-friendly  
+│   │         ├── Generator – community-style, hybrid hostel  
+│   │         ├── NH Hotels – urban, affordable  
+│   │         ├── Choice Hotels – central, low-cost  
+│   │         ├── Wyndham / Best Western – entry-level pricing  
+│   │         └── Hyatt (Hyatt Centric, lifestyle-focused)
 │   │  
 │   ├── Behavior  
 │   │    ├── Age under 25  
@@ -155,7 +204,15 @@ Segmentation
     │    ├── nights > 5  
     │    ├── destination = urban  
     │    ├── hotel_booked = true  
-    │    └── check_in_time → stay duration > median  
+    │    └── check_in_time → stay duration > median
+    │    └── Preferred Hotel Types & Chains  
+    │         ├── Accor (MGallery, Sofitel) – culture-oriented hotels  
+    │         ├── NH Hotels – central locations in cultural cities  
+    │         ├── Rosewood – historic-inspired luxury  
+    │         ├── Marriott (Tribute Portfolio, Autograph Collection) – design-focused  
+    │         ├── InterContinental – located in cultural capitals  
+    │         ├── Hyatt (Centric, historic grand hotels)  
+    │         └── Boutique hotels – city-based, culturally relevant  
     │
     ├── Behavior  
     │    ├── Longer stays in urban destinations  
@@ -176,23 +233,12 @@ Segmentation
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+________________________________________________
+│   │    └── Preferred Destinations  
+│   │         ├── Italy – historical cities & culture  
+│   │         ├── Thailand – budget & adventure  
+│   │         └── USA – family & business hubs  
+_________________________________________________
 
 
 
