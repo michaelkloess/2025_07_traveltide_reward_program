@@ -1,4 +1,4 @@
-## 📁 Project Structure – *TravelTide*
+## 📁 Project Structure – TravelTide
 
 ### 📌 Root
 
