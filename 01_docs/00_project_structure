@@ -11,8 +11,8 @@ TravelTide/
 │   ├── 03_preparing_data.md              ← Data understanding, cleansing steps
 │   ├── 04_data_observations.md           ← Observations made during EDA
 │   ├── 05_cohort_definition.md           ← Definition of the agreed cohort segmentation
-│   ├── 06_feature_decisions.md           ← Rationale behind feature selection
-│   ├── 07_model_evaluation.md            ← Evaluation metrics and validation
+│   ├── 06_feature_engineering.md         ← 
+│   ├── 07_segmentation.md                ← 
 │   ├── 08_bias_injection_log.md          ← Log of where and how bias was introduced
 │   ├── 09_deployment_next_steps.md       ← Recommendations or deployment steps
 │   └── 10_glossary.md                    ← Domain terms and definitions
