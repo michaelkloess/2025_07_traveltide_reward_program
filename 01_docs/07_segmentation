@@ -217,24 +217,7 @@ Segmentation
         ├── Surprise incentive after inactivity
         └── Simplified rebooking journey
 
-        
-________________________________________________
-│   │    └── Preferred Destinations  
-│   │         ├── Italy – historical cities & culture  
-│   │         ├── Thailand – budget & adventure  
-│   │         └── USA – family & business hubs  
-_________________________________________________
-
-│ ├── Behavior
-│ │ ├── Short time span between session and departure
-│ │ ├── Mostly single bookings (flight or hotel)
-│ │ ├── High click volume per session, frequent use but irregular bookings
-│ │ └── Bookings often in countries with low lead time (e.g., domestic European flights)
-│ ├── Preferred Destinations
-│ │ ├── Cities: berlin, amsterdam, lisbon, barcelona, vienna, prague, rome, dubai
-│ │ └── Hotels: Moxy, NH Hotels, Choice Hotels, Best Western, Wyndham
-
-
+____________________________________________________________________________________
 
 Information Sources for hotel allocation
 + Moxy (Marriott) ➤ Reddit ➤ https://tinyurl.com/45k7bk5s
