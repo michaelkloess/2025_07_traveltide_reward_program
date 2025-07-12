@@ -1,0 +1,47 @@
+Die Hotelauswahl in der Datenbank richtet sich primär an Geschäftsreisender, Luxusreisende 
+Alle unterbeteiligten Gruppen fühlen sich ggf. nicht angesprochen, weil es keine Hotels für ihren Geschmack gibt. 
+
+
+Hotelmarke	Kundensegment
+  
+Best Western	Geschäftreisender / Budgetreisender
+Extended Stay	Geschäftreisender / Budgetreisender
+Choice Hotels	Budgetreisender
+
+
+Crowne Plaza	Geschäftsreisender
+Accor	Geschäftsreisender / Budgetreisender (abhängig von Submarke)
+Wyndham	Budgetreisender / Familienreisender
+Radisson	Geschäftsreisender / Kulturreisender
+
+
+Conrad	Luxusreisender
+Marriott	Geschäftsreisender / Luxusreisender
+Fairmont	Luxusreisender 
+Aman Resorts	Luxusreisender
+Starwood	[Unbestätigt] Luxusreisender / Geschäftsreisender
+Shangri-La	Luxusreisender
+Hilton	Luxusreisender / Geschäftsreisender
+Rosewood	Luxusreisender
+Banyan Tree	Luxusreisender
+NH Hotel	Geschäftsreisender
+Four Seasons	Luxusreisender
+InterContinental	Geschäftsreisender / Luxusreisender
+Hyatt	Geschäftsreisender / Luxusreisender
+
+
+
+Hilton	Leisure & Business	Beschreibung auf Businessmodel-Analyst: Leisure + Business Travelers 
+botshot.ai
++2
+Business Model Analyst
++2
+Placer
++2
+InterContinental (IHG)	Corporate & MICE	Teil des IHG-Portfolios mit starker MICE-Ausrichtung (Corporate Rates, Konferenzen) – bestätigt durch Segmentmodell von Cvent/Canary
+Marriott/Starwood	Wie Hilton + Extended	Vergleichbare Struktur: Corporate, Transient, Group
+Waldorf Astoria	Luxus & Familien	Familiär durch Haushaltsdaten aus Placer.ai
+Ritz-Carlton	Luxus & Singles/Empty-nesters	Identifiziert von Placer.ai durch trade-area Analyse
+Hyatt Grand/Regency	Business & MICE	Grand/Regency Marken haben große Meeting-Center – laut Hyatt Wikipedia
+
+  
