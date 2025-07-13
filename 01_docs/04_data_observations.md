@@ -102,7 +102,7 @@ Es gibt keine Dupliakte
 
 ---
 Data Cleansing: 
--- Es gibt negative Hotelnächte
+-- Es gibt negative Hotelnächte // es gibt aber auch Nächte in extremen Werten. Ab 50 Übernachtungen+ bis 107
 -- Es gibt check-in / check-out Zeitfenster von 0.0004375 Sekunden. 
 
 
