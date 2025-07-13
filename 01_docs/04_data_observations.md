@@ -132,6 +132,18 @@ Die Hotelauswahl in der Datenbank richtet sich primär an Geschäftsreisender, L
 Alle unterbeteiligten Gruppen fühlen sich ggf. nicht angesprochen, weil es keine Hotels für ihren Geschmack gibt. 
 
 
+
+
+User-Aggregation: 
+----------
+
+Gender Distribution:
+  F: 5118 (89%)
+  M: 653 (11%)
+  O: 11 (0%)
+
+--------------------
+
 Hotelmarke	Kundensegment
   
 Best Western	Geschäftreisender / Budgetreisender
