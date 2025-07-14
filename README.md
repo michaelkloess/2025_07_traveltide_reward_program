@@ -34,8 +34,6 @@ Elena Tarrant, Head of Marketing, leads the development of a personalized reward
 
 ### 📌 Root
 - [README.md](./README.md) → Project overview and goals  
-- [requirements.txt](./requirements.txt) → Python dependencies (pip)  
-- [.gitignore](./.gitignore) → Files/folders to exclude from Git  
 
 ---
 
