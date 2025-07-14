@@ -38,14 +38,14 @@ Elena Tarrant, Head of Marketing, leads the development of a personalized reward
 ---
 
 ### 📌 01_docs/ → Business and project documentation
-- [00_project_structure.md](./01_docs/00_project_structure.md) → Overview of folders, file purposes, and project organization  
+- [00_project_structure.md](./01_docs/00_project_structured.md) → Overview of folders, file purposes, and project organization  
 - [01_business_use_case.md](./01_docs/01_business_use_case.md) → Business goals, KPIs, context  
 - [02_data_requirements.md](./01_docs/02_data_requirements.md) → Required data sources and fields  
 - [03_preparing_data.md](./01_docs/03_preparing_data.md) → Data understanding, cleansing steps  
 - [04_data_observations.md](./01_docs/04_data_observations.md) → Observations made during EDA  
 - [05_cohort_definition.md](./01_docs/05_cohort_definition.md) → Definition of the agreed cohort segmentation  
 - [06_feature_engineering.md](./01_docs/06_feature_engineering.md) → Feature creation methodology and metrics definition  
-- [07_customer_segmentation.md](./01_docs/07_customer_segmentation.md) → Customer segments framework and classification logic  
+- [07_customer_segmentation.md](./01_docs/07_segmentation.md) → Customer segments framework and classification logic  
 - [08_bias_injection_log.md](./01_docs/08_bias_injection_log.md) → Log of where and how bias was introduced  
 - [09_deployment_next_steps.md](./01_docs/09_deployment_next_steps.md) → Recommendations for deployment and validation steps  
 - [10_glossary.md](./01_docs/10_glossary.md) → Domain terms and definitions  
@@ -63,7 +63,6 @@ Elena Tarrant, Head of Marketing, leads the development of a personalized reward
 - [02_cleansing.ipynb](./03_notebooks/02_cleansing.ipynb) → Data cleansing  
 - [03_preprocessing.ipynb](./03_notebooks/03_preprocessing.ipynb) → Preprocessing, feature engineering  
 - [04_modeling.ipynb](./03_notebooks/04_modeling.ipynb) → Modeling (rule-based segmentation, perk assignment)  
-- [05_evaluation.ipynb](./03_notebooks/05_evaluation.ipynb) → Evaluation and interpretation of results  
 
 ---
 
