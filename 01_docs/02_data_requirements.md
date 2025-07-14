@@ -1,4 +1,4 @@
-# 📄 Overview
+# 📕 Overview
 
 This project uses a ***relational PostgreSQL database*** that forms the analytical foundation for TravelTide’s customer and booking data. </br>
 The schema follows a typical star-like structure consisting of fact and dimension tables, capturing user profiles, session behavior, flight bookings, and hotel stays.
@@ -80,7 +80,7 @@ Below you’ll find: </br>
 | `hotel_per_room_usd` | Price per room per night (pre-discount) | numeric   |
 
 
-# 🗄️ Table Overview
+# 📂 Table Overview
 | Table             | sessions                                                  | flights                                             | hotels                                                  | users                                                                |
 |-------------------|-----------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
 |                   |                                                           |                                                     |                                                         |                                                                      |
@@ -91,7 +91,7 @@ Below you’ll find: </br>
 | What is each row? | Daten zu Nutzer-Sessions, Rabatten und Buchungsverhalten. | Informationen zu gebuchten Flügen und Reisedetails. | Angaben zu Hotelbuchungen, Aufenthaltsdauer und Kosten. | Demografische Nutzerinformationen wie Alter, Geschlecht und Wohnort. |
 | 3NF?              | No                                                        | No                                                  | Yes                                                     | No                                                                   |
 
-# 🗄️ Schema Structure: Key Dimensions and Metrics by Table
+# 📂 Schema Structure: Key Dimensions and Metrics by Table
 
 |          | Dimensions              | Measures               |
 |----------|-------------------------|------------------------|
