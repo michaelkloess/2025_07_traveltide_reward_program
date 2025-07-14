@@ -1,42 +1,159 @@
-### Aggregating Session-Based Data to User Level
+# 📕 Data Preparation Documentation
 
-**Objective:**  
-Generate a user-level dataset from session-based data sources.
+**📌 Overview**
+This document outlines the data preparation process for travel booking platform analysis, focusing on creating a comprehensive session-level dataset enriched with user demographics, flight details, and hotel information.
 
-**Description:**  
-This step consolidates all available session-based information from the 'sessions', 'flights', and 'hotels' tables into a single user-level table.  
-The resulting dataset will have:
-- One row per unique 'user_id'
-- Aggregated features such as:
-  - Total number of sessions
-  - Average session duration
-  - Number of flight and hotel bookings
-  - Conversion status and other behavioral indicators
+## 📕 Data Preprocessing Pipeline
 
-**Target Structure:**
+### 📌 1. Temporal Data Filtering
+```sql
+sessions_after_jan_5_2023 AS (
+    SELECT *
+    FROM sessions
+    WHERE session_start >= '2023-01-05'
+)
+```
+- **Objective**: Filter sessions to include only data from January 5, 2023 onwards
+- **Rationale**: Focus analysis on recent user behavior patterns
+- **Output**: Subset of sessions table with temporal constraints
 
-| user_id | num_sessions | avg_session_time | num_flights | num_hotels | converted | ... |
-|---------|--------------|------------------|-------------|------------|-----------|-----|
+### 📌 2. User Activity Filtering
+```sql
+users_with_more_than_7_sessions AS (
+    SELECT user_id, COUNT(*) AS session_count
+    FROM sessions_after_jan_5_2023
+    GROUP BY user_id
+    HAVING COUNT(*) > 7
+)
+```
+- **Objective**: Identify high-engagement users for analysis
+- **Criteria**: Users with more than 7 sessions
+- **Output**: List of active user_ids with session counts
 
-The resulting dataset is saved in the `02_data/processed/` directory and used in subsequent analysis and modeling steps.
+### 📌 3. Hotel Data Cleaning
+```sql
+ordered_check_in_out AS (
+    SELECT
+        trip_id,
+        CASE WHEN check_out_time < check_in_time 
+             THEN check_out_time ELSE check_in_time END AS cleaned_check_in_time,
+        CASE WHEN check_out_time < check_in_time 
+             THEN check_in_time ELSE check_out_time END AS cleaned_check_out_time
+    FROM hotels
+)
+```
+- **Objective**: Correct reversed check-in/check-out timestamps
+- **Logic**: Swap timestamps when check_out_time precedes check_in_time
+- **Output**: Standardized hotel booking timestamps
 
+### 📌 4. Stay Duration Calculation
+```sql
+calculated_stay AS (
+    SELECT
+        trip_id,
+        (cleaned_check_out_time::date - cleaned_check_in_time::date) AS cleaned_nights,
+        CASE WHEN cleaned_check_out_time - cleaned_check_in_time < INTERVAL '1 day'
+             THEN EXTRACT(EPOCH FROM (cleaned_check_out_time - cleaned_check_in_time)) / 3600.0
+             ELSE NULL END AS duration_hours
+    FROM ordered_check_in_out
+)
+```
+- **Objective**: Calculate hotel stay duration in nights and hours
+- **Logic**: 
+  - Night calculation: Date difference between check-out and check-in
+  - Hour calculation: For same-day stays (< 24 hours)
+- **Output**: Stay duration metrics for each trip
 
+### 📌 5. Comprehensive Data Enrichment
+```sql
+enriched_sessions_with_user_trip_data AS (
+    SELECT
+        -- Session identifiers
+        s.session_id, s.user_id, s.trip_id,
+        s.session_start, s.session_end, s.page_clicks,
+        
+        -- Binary conversion of booking flags
+        s.flight_booked,
+        CASE WHEN flight_booked = 'true' THEN 1 ELSE 0 END AS binary_flight_booked,
+        
+        -- User demographic data with age calculation
+        u.birthdate,
+        DATE_PART('year', AGE(CURRENT_DATE, u.birthdate)) AS customer_age,
+        
+        -- Geographic distance calculation
+        COALESCE(haversine_distance(home_airport_lat, home_airport_lon,
+                 destination_airport_lat, destination_airport_lon), 0) AS flown_flight_distance,
+        
+        -- Hotel name parsing
+        LEFT(h.hotel_name, LENGTH(h.hotel_name) - POSITION(' - ' IN REVERSE(h.hotel_name)) - 2) AS extract_hotel_name,
+        RIGHT(h.hotel_name, POSITION(' - ' IN REVERSE(h.hotel_name)) - 1) AS extract_hotel_location,
+        
+        -- Trip cancellation flag (window function)
+        MAX(CASE WHEN cancellation = 'true' THEN 1 ELSE 0 END) OVER (PARTITION BY s.trip_id) AS trip_cancelled
+        
+    FROM sessions_after_jan_5_2023 s
+    LEFT JOIN users u ON s.user_id = u.user_id
+    LEFT JOIN flights f ON s.trip_id = f.trip_id
+    LEFT JOIN hotels h ON s.trip_id = h.trip_id
+    LEFT JOIN ordered_check_in_out oco ON s.trip_id = oco.trip_id
+    LEFT JOIN calculated_stay cs ON s.trip_id = cs.trip_id
+    WHERE s.user_id IN (SELECT user_id FROM users_with_more_than_7_sessions)
+)
+```
 
-Data Pre Processing: 
+#### 📌 Key Transformations:
+- **Boolean Conversion**: String 'true'/'false' values converted to binary 1/0
+- **Age Calculation**: Dynamic age computation from birthdate
+- **Distance Calculation**: Haversine formula for flight distance
+- **String Parsing**: Hotel name and location extraction
+- **Window Functions**: Trip-level cancellation status
 
-Alle Booleans in Binär umgewandelt
+## 📕 Data Quality Features
 
+### Null Handling
+- `COALESCE()` functions ensure zero values for missing numeric data
+- `NULLIF()` prevents division by zero errors
+- Default values assigned for critical metrics
 
-Given the large volume of data in the session table, we have implemented a cohort filter as outlined below:
+### Data Validation
+- Temporal consistency checks for hotel bookings
+- Geographic coordinate validation
+- Binary flag standardization
 
-Sessions after 04th Jan 2023 Users with more than 7 sessions Regarding the "nights" column, we encountered issues with invalid or incorrect data, including values such as 0, -1, and -2.
+### Join Strategy
+- **LEFT JOIN**: Preserves all session records
+- **Incremental Enrichment**: Sequential data enhancement through CTEs
+- **Foreign Key Relationships**: Maintained across users, flights, hotels tables
 
-In an effort to determine valid entries, we analyzed the check_in_time and check_out_time columns. However, we were unable to establish a consistent pattern:
+## 📕 Output Schema
 
-♦ The check-in and check-out times were often recorded in reverse order (e.g., check-out time preceding check-in time, or vice versa).
+### Session Level Metrics
+- `session_id`, `user_id`, `trip_id`
+- `session_start`, `session_end`, `page_clicks`
 
-♦ Additionally, the duration between check-in and check-out did not reliably correspond to the expected number of nights, indicating discrepancies in the data.
+### User Demographics
+- `customer_age`, `gender`, `married`, `has_children`
+- `home_country`, `home_city`, `home_airport`
 
-To address this, we decided to use the absolute values to correct the data inconsistencies.
+### Booking Behavior
+- `binary_flight_booked`, `binary_hotel_booked`
+- `binary_flight_discount`, `binary_hotel_discount`
+- `binary_cancellation`, `trip_cancelled`
 
-Although it is impossible to determine the exact number of nights booked, we can reasonably assume that after a successful check-in at a hotel (none of the filtered records had NULL values in either the check-in or check-out columns), at least one night's payment must be made. Consequently, we replaced the invalid data with a value of 1.
+### Trip Details
+- `flown_flight_distance`, `base_fare_usd`
+- `cleaned_nights`, `hotel_price_per_room_night_usd`
+- `seats`, `rooms`, `checked_bags`
+
+### Calculated Fields
+- `extract_hotel_name`, `extract_hotel_location`
+- `cleaned_check_in_time`, `cleaned_check_out_time`
+
+## 📕 Export Configuration
+```python
+df = pd.read_sql(query, engine)
+export = pd.read_sql(query, engine)
+```
+- **Output**: Pandas DataFrame ready for downstream analysis
+- **Format**: Session-level enriched dataset
+- **Usage**: Foundation for user segmentation and modeling
