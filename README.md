@@ -1,7 +1,25 @@
-## 📁 Project Structure – TravelTide
+# 📕 TravelTide Customer Segmentation Project
+
+**📌 Project Overview**
+This project develops a comprehensive customer segmentation framework for TravelTide, a travel booking platform, to enable personalized marketing strategies and improve customer retention through targeted perk assignment.
+
+## 📕 Business Context
+
+### 📌 Challenge
+TravelTide faces increasing competition in the travel booking market, requiring enhanced customer loyalty and retention strategies. CEO Kevin Talanick has prioritized strengthening customer relationships through personalized experiences.
+
+### 📌 Solution
+Elena Tarrant, Head of Marketing, leads the development of a personalized rewards program that highlights specific benefits each customer values most—such as free cancellation or priority check-in—when inviting them to join the program.
+
+### 📌 Objectives
+- Identify distinct customer segments with consistent perk preferences
+- Assign likely favorite perks to each customer for personalized outreach
+- Enable data-driven decision-making for marketing initiatives
+- Improve customer lifetime value and retention rates
+
+## 📁 Project Structure
 
 ### 📌 Root
-
 - [README.md](./README.md) → Project overview and goals  
 - [requirements.txt](./requirements.txt) → Python dependencies (pip)  
 - [.gitignore](./.gitignore) → Files/folders to exclude from Git  
@@ -9,70 +27,139 @@
 ---
 
 ### 📌 01_docs/ → Business and project documentation
-
 - [00_project_structure.md](./01_docs/00_project_structure.md) → Overview of folders, file purposes, and project organization  
 - [01_business_use_case.md](./01_docs/01_business_use_case.md) → Business goals, KPIs, context  
 - [02_data_requirements.md](./01_docs/02_data_requirements.md) → Required data sources and fields  
 - [03_preparing_data.md](./01_docs/03_preparing_data.md) → Data understanding, cleansing steps  
 - [04_data_observations.md](./01_docs/04_data_observations.md) → Observations made during EDA  
 - [05_cohort_definition.md](./01_docs/05_cohort_definition.md) → Definition of the agreed cohort segmentation  
-- [06_feature_decisions.md](./01_docs/06_feature_decisions.md) → Rationale behind feature selection  
-- [07_model_evaluation.md](./01_docs/07_model_evaluation.md) → Evaluation metrics and validation  
+- [06_feature_engineering.md](./01_docs/06_feature_engineering.md) → Feature creation methodology and metrics definition  
+- [07_customer_segmentation.md](./01_docs/07_customer_segmentation.md) → Customer segments framework and classification logic  
 - [08_bias_injection_log.md](./01_docs/08_bias_injection_log.md) → Log of where and how bias was introduced  
-- [09_deployment_next_steps.md](./01_docs/09_deployment_next_steps.md) → Recommendations or deployment steps  
+- [09_deployment_next_steps.md](./01_docs/09_deployment_next_steps.md) → Recommendations for deployment and validation steps  
 - [10_glossary.md](./01_docs/10_glossary.md) → Domain terms and definitions  
 
 ---
 
 ### 📌 02_data/ → Organized data storage
-
-- [01_raw/](./02_data/01_raw/) → Original unmodified data  
-- [02_external/](./02_data/02_external/) → Third-party or open data  
-- [03_interim/](./02_data/03_interim/) → Intermediate cleaned or transformed data  
-- [04_processed/](./02_data/04_processed/) → Final datasets ready for analysis/modeling  
+- [01_interim/](./02_data/01_interim/) → Intermediate cleaned or transformed data  
+- [02_processed/](./02_data/02_processed/) → Final datasets ready for analysis/modeling  
 
 ---
 
-### 📌 03_config/ → Centralized configuration
-
-- [01_config.yaml](./03_config/01_config.yaml) → File paths, model parameters, etc.  
-
----
-
-### 📌 04_src/ → Source code for data handling and modeling
-
-#### SQL
-- [01_clean_data.sql](./04_src/01_sql/01_clean_data.sql) → Data cleaning, transformation  
-- [02_join_sources.sql](./04_src/01_sql/02_join_sources.sql)  
-- [03_feature_engineering.sql](./04_src/01_sql/03_feature_engineering.sql)  
-
-#### Python
-- [01_data_preparation.py](./04_src/02_py/01_data_preparation.py) → Data cleaning, transformation  
-- [02_modeling.py](./04_src/02_py/02_modeling.py) → Training, scoring, segmentation  
-- [03_evaluation.py](./04_src/02_py/03_evaluation.py) → Model evaluation, metric computation  
-- [04_utils.py](./04_src/02_py/04_utils.py) → Utility functions (e.g., plots, loaders)  
+### 📌 03_notebooks/ → Jupyter notebooks in pipeline order
+- [01_exploration.ipynb](./03_notebooks/01_exploration.ipynb) → Initial data exploration and visualization  
+- [02_cleansing.ipynb](./03_notebooks/02_cleansing.ipynb) → Data cleansing  
+- [03_preprocessing.ipynb](./03_notebooks/03_preprocessing.ipynb) → Preprocessing, feature engineering  
+- [04_modeling.ipynb](./03_notebooks/04_modeling.ipynb) → Modeling (rule-based segmentation, perk assignment)  
+- [05_evaluation.ipynb](./03_notebooks/05_evaluation.ipynb) → Evaluation and interpretation of results  
 
 ---
 
-### 📌 05_notebooks/ → Jupyter notebooks in pipeline order
-
-- [01_exploration.ipynb](./05_notebooks/01_exploration.ipynb) → Initial data exploration and visualization  
-- [02_cleansing.ipynb](./05_notebooks/02_cleansing.ipynb) → Data cleansing  
-- [03_preprocessing.ipynb](./05_notebooks/03_preprocessing.ipynb) → Preprocessing, feature engineering  
-- [04_modeling.ipynb](./05_notebooks/04_modeling.ipynb) → Modeling (e.g. clustering, scoring)  
-- [05_evaluation.ipynb](./05_notebooks/05_evaluation.ipynb) → Evaluation and interpretation of results  
+### 📌 04_outputs/ → Outputs generated during analysis
+- [01_visuals/](./04_outputs/01_visuals/) → Plots, charts, heatmaps, segment distributions  
+- [02_tables/](./04_outputs/02_tables/) → Exported results (CSV, Excel, segment assignments)  
 
 ---
 
-### 📌 06_outputs/ → Outputs generated during analysis
+### 📌 05_reports/ → Final reports and project outcomes
+- [01_summary.md](./05_reports/01_summary.md) → Summary of results and conclusions  
+- [02_presentation.pdf](./05_reports/02_presentation.pdf) → Presentation slides for stakeholders  
 
-- [01_visuals/](./06_outputs/01_visuals/) → Plots, charts, heatmaps, etc.  
-- [02_tables/](./06_outputs/02_tables/) → Exported results (CSV, Excel)  
+## 📕 Customer Segments Identified
 
----
+### 📌 Seven Distinct Segments
 
-### 📌 07_reports/ → Final reports and project outcomes
+| Segment | Key Characteristics | Business Value |
+|---------|-------------------|----------------|
+| **Luxury Travelers** | High spending (≥$2000/trip), premium service focus | Highest revenue per customer |
+| **Business Travelers** | Short trips, frequent travel, professional focus | High lifetime value, predictable patterns |
+| **Family Travelers** | Multiple rooms, extended stays, child-friendly needs | High volume, seasonal predictability |
+| **Young Travelers** | Age ≤30, experience-focused, social connectivity | Future high-value, brand advocacy potential |
+| **Spontaneous Adventurers** | Last-minute bookings, high conversion rates | Immediate gratification marketing potential |
+| **Budget Travelers** | Price-sensitive, discount-driven behavior | Volume-driven revenue through value proposition |
+| **Lost Opportunities** | Low conversion, cancellation history | Recovery potential with targeted intervention |
 
-- [01_summary.md](./07_reports/01_summary.md) → Summary of results and conclusions  
-- [02_presentation.pdf](./07_reports/02_presentation.pdf) → Presentation slides for stakeholders  
-- [03_storytelling.md](./07_reports/03_storytelling.md) → Visuals and text modules for narrative presentation of results  
+### 📌 Personalized Perk Examples
+
+**Luxury Travelers:** Concierge service, VIP support, private transfers, exclusive events  
+**Business Travelers:** Subscription model, lounge access, expense reporting, priority support  
+**Family Travelers:** Kids stay free, family bundles, child-friendly content, travel insurance  
+**Young Travelers:** Social sharing bonuses, group discounts, event tickets, gamified badges  
+**Spontaneous Adventurers:** Last-minute deals, instant bonuses, mystery trips, flash sales  
+**Budget Travelers:** Discount cards, price alerts, cashback, upgrade surprises  
+**Lost Opportunities:** Reactivation campaigns, personal vouchers, simplified rebooking  
+
+## 📕 Technical Implementation
+
+### 📌 Data Processing
+- **Cohort:** Users with >7 sessions after January 5, 2023
+- **Feature Engineering:** 35+ behavioral and spending metrics
+- **Segmentation Logic:** Hierarchical rule-based classification
+- **Validation:** A/B testing framework for effectiveness measurement
+
+### 📌 Key Technologies
+- **SQL:** Data cleaning, feature engineering, segmentation logic
+- **Python:** Data analysis, visualization, modeling pipeline
+- **Jupyter Notebooks:** Interactive analysis and documentation
+
+## 📕 Project Timeline
+
+### 📌 Development Phases [09.06.2025 - 11.07.2025] | 33 Tage 
+
+** Week 1 - EDA - Exploring the Data:**
+- Familiarize with business context and available data
+- Clean and prepare data for analysis
+- Create session-level and user-level aggregated tables
+- Understand data structure and quality issues
+
+** Week 2 - Feature Engineering - Devising Metrics:**
+- Identify key customer characteristics for segmentation
+- Create combined metrics that capture customer behavior
+- Perform aggregations from session to user level
+- Develop meaningful attributes for customer differentiation
+
+** Week 3 - Customer Segmentation - Grouping Customers:**
+- Perform customer analysis using engineered metrics
+- Identify distinct customer groups and their characteristics
+- Assign appropriate perks to each segment
+- Validate segment definitions and business relevance
+
+** Week 4 - Presentation:**
+- Create executive summary and stakeholder presentations
+- Develop data storytelling with compelling visualizations
+- Provide recommendations for success measurement
+- Document deployment and next steps
+
+## 📕 Current Status
+
+### 📌 Completion Overview
+- 🟢 **Documentation:** Complete (11/11 files)
+- 🟢 **Data Pipeline:** Complete with processed datasets
+- 🟢 **Feature Engineering:** Complete with 35+ metrics
+- 🟢 **Segmentation Logic:** Complete with 7 segments and perk assignments
+- 🟡 **Validation:** Pending A/B testing implementation
+- 🔴 **Production Deployment:** Awaiting validation results
+
+### 📌 Key Deliverables
+- Comprehensive customer segmentation framework
+- Personalized perk assignment system
+- Detailed documentation and implementation guides
+- Stakeholder presentation materials
+- Deployment and validation roadmap
+
+## 📕 Next Steps
+
+### 📌 Immediate Priorities
+1. **A/B Testing:** Implement validation framework to measure segmentation effectiveness
+2. **Survey Collection:** Gather customer feedback on perk preferences
+3. **Performance Monitoring:** Establish metrics for segment success measurement
+4. **Iterative Refinement:** Optimize thresholds and criteria based on validation results
+
+### 📌 Success Metrics
+- Increased conversion rates by segment
+- Improved customer lifetime value
+- Enhanced retention rates
+- Positive customer satisfaction with personalized experiences
+
+**Contact:** For questions about this project, please refer to the comprehensive documentation in the `01_docs/` folder or reach out to the project team.
