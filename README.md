@@ -17,6 +17,19 @@ Elena Tarrant, Head of Marketing, leads the development of a personalized reward
 - Enable data-driven decision-making for marketing initiatives
 - Improve customer lifetime value and retention rates
 
+## 📕 Technology Stack
+
+### 📌 Core Technologies
+- **Database:** PostgreSQL with DBeaver
+- **Programming:** SQL, Python
+- **Development:** Jupyter Notebook, VS Code
+- **Libraries:** Pandas, SQLAlchemy, Matplotlib
+
+### 📌 Implementation Approach
+- **Data Processing:** SQL aggregations → Python analysis
+- **Segmentation:** Rule-based classification 
+- **Documentation:** Markdown with Git version control
+
 ## 📁 Project Structure
 
 ### 📌 Root
