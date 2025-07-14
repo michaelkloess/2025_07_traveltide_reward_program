@@ -76,8 +76,10 @@ Elena Tarrant, Head of Marketing, leads the development of a personalized reward
 ---
 
 ### 📌 05_reports/ → Final reports and project outcomes
-- [01_summary.md](./05_reports/01_summary.md) → Summary of results and conclusions  
-- [02_presentation.pdf](./05_reports/02_presentation.pdf) → Presentation slides for stakeholders  
+- [01_executive_summary.md](./05_reports/01_summary.md) → Executive Summary of results and conclusions  
+- [02_detailed_report.pdf](./05_reports/02_detailed_report.pdf) → Detailed report for stakeholders  
+- [03_presentation.pdf](./05_reports/03_presentation.pdf) → Presentation slides for stakeholders
+- [04_video_presentation.md](./05_reports/04_video_presentation.md) → Presentation video for stakeholders  
 
 ## 📕 Customer Segments Identified
 
