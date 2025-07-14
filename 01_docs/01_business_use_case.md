@@ -12,13 +12,13 @@ To address this, CEO **Kevin Talanick** has prioritized strengthening customer l
 As part of this strategy, **Elena Tarrant** has joined TravelTide as the new **Head of Marketing**. 
 With a proven track record in developing successful retention programs, she brings valuable expertise in creating engaging rewards systems.
 
-### 📙 Strategic Initiative
+### 📕 Strategic Initiative
 Elena is leading the development of a **personalized rewards program** designed to increase repeat usage of the platform. 
 The core idea is simple: highlight the specific benefit each customer values most—such as *free cancellation* or *priority check-in*—when inviting them to join the program.
 
 By tailoring communication to individual preferences, the program aims to significantly improve the likelihood of sign-up and long-term engagement.
 
-### 📗 Data-Driven Approach
+### 📕 Data-Driven Approach
 In close collaboration with the Data Analytics team, the initiative is grounded in evidence-based decision-making. 
 
 The analytical goals include:
