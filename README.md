@@ -107,25 +107,25 @@ Elena Tarrant, Head of Marketing, leads the development of a personalized reward
 
 ### 📌 Development Phases [09.06.2025 - 11.07.2025] | 33 Tage 
 
-** Week 1 - EDA - Exploring the Data:**
+**Week 1 - EDA - Exploring the Data:**
 - Familiarize with business context and available data
 - Clean and prepare data for analysis
 - Create session-level and user-level aggregated tables
 - Understand data structure and quality issues
 
-** Week 2 - Feature Engineering - Devising Metrics:**
+**Week 2 - Feature Engineering - Devising Metrics:**
 - Identify key customer characteristics for segmentation
 - Create combined metrics that capture customer behavior
 - Perform aggregations from session to user level
 - Develop meaningful attributes for customer differentiation
 
-** Week 3 - Customer Segmentation - Grouping Customers:**
+**Week 3 - Customer Segmentation - Grouping Customers:**
 - Perform customer analysis using engineered metrics
 - Identify distinct customer groups and their characteristics
 - Assign appropriate perks to each segment
 - Validate segment definitions and business relevance
 
-** Week 4 - Presentation:**
+**Week 4 - Presentation:**
 - Create executive summary and stakeholder presentations
 - Develop data storytelling with compelling visualizations
 - Provide recommendations for success measurement
