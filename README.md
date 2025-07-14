@@ -67,7 +67,7 @@ Elena Tarrant, Head of Marketing, leads the development of a personalized reward
 ---
 
 ### 📌 04_outputs/ → Outputs generated during analysis
-- [01_visuals/]() → Plots, charts, heatmaps, segment distributions  
+- 01_visuals/ → Plots, charts, heatmaps, segment distributions  
 - [02_tables/](./04_outputs/) → Exported results (CSV, Excel, segment assignments)  
 
 ---
