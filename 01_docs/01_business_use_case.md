@@ -1,6 +1,6 @@
 ## The TravelTide Company – Customer Rewards Program
 
-### 📚 Background
+### 📕 Background
 **TravelTide** is a rapidly growing e-booking startup founded in April 2021, known for its industry-leading search and data aggregation technology. 
 By offering access to the largest travel inventory in the market, TravelTide has quickly become a strong player in the online travel sector.
 
