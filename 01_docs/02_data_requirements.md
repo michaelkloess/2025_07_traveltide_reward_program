@@ -88,7 +88,7 @@ Below you’ll find: </br>
 | Dim/Fct?          | Fact                                                      | Fact                                                | Fact                                                    | Dimensions                                                           |
 | How many columns?    | 13                                                        | 13                                                  | 7                                                       | 11                                                                   |
 | How many rows? | 5408063                                                   | 1901038                                             | 1918617                                                 | 1020926                                                              |
-| What is each row? | Daten zu Nutzer-Sessions, Rabatten und Buchungsverhalten. | Informationen zu gebuchten Flügen und Reisedetails. | Angaben zu Hotelbuchungen, Aufenthaltsdauer und Kosten. | Demografische Nutzerinformationen wie Alter, Geschlecht und Wohnort. |
+| What is each table? | Daten zu Nutzer-Sessions, Rabatten und Buchungsverhalten. | Informationen zu gebuchten Flügen und Reisedetails. | Angaben zu Hotelbuchungen, Aufenthaltsdauer und Kosten. | Demografische Nutzerinformationen wie Alter, Geschlecht und Wohnort. |
 | 3NF?              | No                                                        | No                                                  | Yes                                                     | No                                                                   |
 
 # 📂 Schema Structure: Key Dimensions and Metrics by Table
