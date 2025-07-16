@@ -8,7 +8,6 @@ This document provides a comprehensive overview of the TravelTide customer segme
 ### 📌 Project Root
 ```
 TravelTide/
-│
 ├── README.md                             ← Project overview and goals
 ```
 
