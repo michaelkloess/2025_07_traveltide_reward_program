@@ -8,12 +8,23 @@ While not all tables are fully normalized (3NF), the design supports performant 
 
 Below you’ll find: </br>
 
-➤ A detailed schema description per table </br>
 ➤ An overview of key columns with types and meanings </br>
-➤ Classification of dimensions vs. measures </br>
 ➤ Metadata overview (keys, normalization, row counts) </br>
+➤ A detailed schema description per table </br>
+➤ Classification of dimensions vs. measures </br>
 
 ---
+
+# 📂 Table Overview
+| Table             | sessions                                                  | flights                                             | hotels                                                  | users                                                                |
+|-------------------|-----------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
+|                   |                                                           |                                                     |                                                         |                                                                      |
+| Primary key?      | session_id                                                | trip_id                                             | trip_id                                                 | user_id                                                              |
+| Dim/Fct?          | Fact                                                      | Fact                                                | Fact                                                    | Dimensions                                                           |
+| How many columns?    | 13                                                        | 13                                                  | 7                                                       | 11                                                                   |
+| How many rows? | 5408063                                                   | 1901038                                             | 1918617                                                 | 1020926                                                              |
+| What is each table? | Data on user sessions, discounts, and booking behavior. | Information about booked flights and travel details. | Information about hotel reservations, length of stay, and costs. | Demographic user information such as age, gender, and place of residence. |
+| 3NF?              | No                                                        | No                                                  | Yes                                                     | No                                                                   |
 
 # 📂 Table: users 
 
@@ -78,18 +89,6 @@ Below you’ll find: </br>
 | `check_in_time`      | Check-in time                           | timestamp |
 | `check_out_time`     | Check-out time                          | timestamp |
 | `hotel_per_room_usd` | Price per room per night (pre-discount) | numeric   |
-
-
-# 📂 Table Overview
-| Table             | sessions                                                  | flights                                             | hotels                                                  | users                                                                |
-|-------------------|-----------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
-|                   |                                                           |                                                     |                                                         |                                                                      |
-| Primary key?      | session_id                                                | trip_id                                             | trip_id                                                 | user_id                                                              |
-| Dim/Fct?          | Fact                                                      | Fact                                                | Fact                                                    | Dimensions                                                           |
-| How many columns?    | 13                                                        | 13                                                  | 7                                                       | 11                                                                   |
-| How many rows? | 5408063                                                   | 1901038                                             | 1918617                                                 | 1020926                                                              |
-| What is each table? | Data on user sessions, discounts, and booking behavior. | Information about booked flights and travel details. | Information about hotel reservations, length of stay, and costs. | Demographic user information such as age, gender, and place of residence. |
-| 3NF?              | No                                                        | No                                                  | Yes                                                     | No                                                                   |
 
 # 📂 Schema Structure: Key Dimensions and Metrics by Table
 
