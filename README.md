@@ -1,4 +1,4 @@
-# 📕 TravelTide Customer Segmentation Project
+# 📕 TravelTide_Customer_Reward_Program
 
 **📌 Project Overview**
 This project develops a comprehensive customer segmentation framework for TravelTide, a travel booking platform, to enable personalized marketing strategies and improve customer retention through targeted perk assignment.
